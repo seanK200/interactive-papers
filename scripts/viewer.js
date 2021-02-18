@@ -127,8 +127,17 @@ async function processImages(contentName) {
     }
 }
 
+function replaceWithLoader(targetElement, loadingPrompt='Loading...') {
+    let loaderHtml = '<div class="d-flex align-items-center w-100 border border-2 border-primary rounded p-4">';
+    loaderHtml += '<p class="lead text-primary m-0">' + loadingPrompt + '</p>';
+    loaderHtml += '<div class="spinner-border ms-auto text-primary" role="status" aria-hidden="true"></div>';
+    loaderHtml += '</div>';
+    targetElement.innerHTML = loaderHtml;
+}
+
 function fetchContent(contentName) {
-    document.getElementById('content-div').innerHTML = '';
+    const contentDiv = document.getElementById('content-div')
+    replaceWithLoader(contentDiv, 'Loading content...');
     let urlPrefix = 'docs/' + contentName + '/';
     $.ajax({
         url: urlPrefix + 'content.html',
@@ -136,6 +145,7 @@ function fetchContent(contentName) {
         dataType: 'html',
     })
     .done(async function(html) {
+        contentDiv.innerHTML = '';
         await $('#content-div').append(html);
         processAnnotations();
         processImages(contentName);
@@ -148,7 +158,8 @@ function fetchContent(contentName) {
 }
 
 function fetchFootnotes(contentName) {
-    document.getElementById('footnotes-div').innerHTML = '';
+    const footnoteDiv = document.getElementById('footnotes-div');
+    replaceWithLoader(footnoteDiv, 'Loading footnotes...');
     let urlPrefix = 'docs/' + contentName + '/';
     $.ajax({
         url: urlPrefix + 'footnotes.html',
@@ -156,6 +167,7 @@ function fetchFootnotes(contentName) {
         dataType: 'html',
     })
     .done(async function(html) {
+        footnoteDiv.innerHTML = '';
         await $('#footnotes-div').append(html);
         processFootnotes();
         processImages(contentName);
@@ -185,6 +197,7 @@ const handleContentLoadFormSubmit = (e=null) => {
     let contentName = document.getElementById('content_input').value;
     if(validateContentLoadForm()) {
         try {
+
             fetchContent(contentName);
             fetchFootnotes(contentName);
             setContentAttributes(contentName);
