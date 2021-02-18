@@ -114,7 +114,7 @@ function processFootnotes() {
 }
 
 /* */
-function processImages(contentName) {
+async function processImages(contentName) {
     const images = document.getElementsByTagName('img');
     const srcUrlPrefix = 'docs/' + contentName + "/"
     for(let i=0; i<images.length; i++) {
@@ -122,6 +122,7 @@ function processImages(contentName) {
         if(old_src.split('/')[0] !=='docs/' && old_src.split('/')[0] !=='assets/') {
             const new_src = srcUrlPrefix + old_src;
             images[i].setAttribute('src', new_src);
+            console.log(`processImages oldSrc=${old_src}, newSrc=${new_src}`)
         }
     }
 }
