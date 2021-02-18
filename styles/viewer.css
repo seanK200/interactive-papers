@@ -1,0 +1,110 @@
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+div.content {
+    border: solid;
+    border-width: 1px 0;
+    border-color: rgb(214, 219, 214);
+    height: calc(100vh - 100px);
+    position: relative;
+}
+
+div.content a {
+    cursor: pointer;
+}
+
+@keyframes temporary-highlighter {
+    0% {
+        background: rgba(255, 240, 131, 0);
+    }
+    50% {
+        background: rgba(255, 240, 131, 1);
+    }
+    100% {
+        background: rgba(255, 240, 131, 0);
+    }
+}
+
+div.temporary-highlighter {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(1em + 8px);
+    z-index: -1;
+    background: rgba(255, 240, 131, 1);
+    animation: temporary-highlighter;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+div.student-submission div.author {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+div.student-submission div.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+div.content-load-form {
+    margin-bottom: 30px;
+}
+
+div.footnote-viewer, div.footnote-viewer-mobile {
+    width: 100%;
+}
+div.footnote-viewer img, div.footnote-viewer-mobile img {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.footnotes {
+    margin: 60px 0 100px 0;
+    background: rgb(238, 240, 240);
+}
+
+div.footnotes div.footnote {
+    padding: 10px;
+    border: solid gray;
+    border-width: 1px 0 0 0;
+}
+
+div.footnote-name {
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+div#footnote-viewer-container {
+    background: rgb(246, 247, 249);
+    border: solid rgb(217, 223, 226);
+    border-width: 1px 0;
+    max-height: 100%;
+    overflow: auto;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+    div.content {
+        height: calc(100vh - 200px);
+    }
+
+    div#footnote-viewer-container {
+        background: rgb(246, 247, 249);
+        border: none;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 15px;
+    }
+
+}
