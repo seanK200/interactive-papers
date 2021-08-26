@@ -1,54 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-      crossorigin="anonymous"
-    />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
     <!-- Bootstrap Icon Font-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <!-- Custom CSS styling -->
-    <link rel="stylesheet" href="./styles/viewer.css" />
-
+    <link rel="stylesheet" href="../../styles/viewer.css">
+    
     <!--jQuery-->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-    <title>Interactive Papers Home</title>
-  </head>
-  <body>
-    <h2>Interactive Papers</h2>
-    <p>
-      <span
-        >Welcome to the Interactive Papers Wiki for WORLD HISTORY: GROUP I
-        (UIC1501.02-00)!</span
-      >
-    </p>
-    <h3><span>Introduction</span></h3>
-    <p>
-      Interactive Papers is an online version of an academic paper, with
-      external references and embedded content that makes your paper
-      'interactive.' Learn how to embed links to external reference texts, or
-      even media such as images, audios, and videos needed to support your
-      content.
-    </p>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-    <p>
-      Open the file browser on the very left side of the screen(2nd icon from
-      the top), and navigate to the docs folder to find your working folder.
-    </p>
-  </body>
+    <title>Interactive Papers</title>
+</head>
+<body>
+    <div class="container-xxl py-3">
+        <div class="row">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Interactive Papers</h2>
+            </div>
+            <div class="content col-md overflow-auto py-3" id="content-div">
+              <!-- Start of Content -->
+              <h2>
+                Welcome to the Interactive Papers!
+              </h2>
+              <p>
+                Interactive Papers is an online version of an academic paper, with
+                external references and embedded content that makes your paper
+                'interactive.' Learn how to embed links to external reference texts, or
+                even media such as images, audios, and videos needed to support your
+                content.
+              </p>
+              <p>
+                To access content, please use the direct links provided to you during class.
+              </p>
+              
+              <!-- End of Content -->
+            </div>
+            
+            <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+            <div class="col-md-4" id="footnote-viewer-container" style="display: none;">
+                <button type="button" class="btn-close mt-3 mb-2" aria-label="Close" onclick="handleCloseFootnoteViewerClick()"></button>
+                <div class="footnote-viewer" id="footnote-viewer"></div>
+                <div id="footnote-actions-multiple" class="mt-3" style="display: none;">
+                    <i id="prev-btn" class="bi bi-chevron-left" style="color: inherit; cursor: pointer;" onclick="handlePreviousSameFootnoteClick(this)"></i>
+                    <span id="current">1</span> / <span id="total">1</span>
+                    <i id="next-btn" class="bi bi-chevron-right" style="color: inherit; cursor: pointer;" onclick="handleNextSameFootnoteClick(this)"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="footnotes hidden" id="footnotes-div">
+            <!-- Start of Footnotes -->
+            <!-- This is where you enter all of your footnotes -->
+
+        
+
+            <!-- End of Footnotes -->
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../scripts/viewer.js"></script>
+</body>
 </html>
