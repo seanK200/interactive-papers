@@ -8,7 +8,6 @@
     If found, the value will be replaced. If not found, it will be newly inserted.
 */
 function changeStyle(targetElement, newValue) {
-    console.log(`changeStyle(${targetElement}, ${newValue})`)
     const oldClassName = targetElement.className.split(' ');
     let newClassName = '';
 
@@ -20,25 +19,11 @@ function changeStyle(targetElement, newValue) {
         } else {
             newClassName += oldValue;
         }
-
         if(index < oldClassName.length - 1) newClassName += ' ';
     });
     if(!predefined) newClassName += newValue;
     targetElement.className = newClassName;
-}
-
-function removeStyle(targetElement, originalValue) {
-    console.log(`removeStyle(${targetElement}, ${originalValue})`)
-    const oldClassName = targetElement.className.split(' ');
-    let newClassName = '';
-
-    oldClassName.forEach((oldValue, index) => {
-        if(oldValue !== originalValue) {
-            newClassName += oldValue;
-        }
-    });
-
-    targetElement.className = newClassName;
+    // console.log(`oldClassName=${oldClassName}, newClassName=${newClassName}`)
 }
 
 
@@ -47,10 +32,9 @@ function removeStyle(targetElement, originalValue) {
     This is the first function that runs as soon as the page has loaded
 */
 function initializeApp() {
-    // processAnnotations();
-    // processFootnotes();
-    const form = document.getElementById('content-select-form');
-    form.addEventListener('submit', handleContentLoadFormSubmit);
+    processAnnotations();
+    processFootnotes();
+    processImages();
 }
 
 //Calling the function initializeApp as soon as the webpage(window) has loaded
@@ -113,110 +97,17 @@ function processFootnotes() {
     }
 }
 
-/* */
-async function processImages(contentName) {
-    const images = document.getElementsByTagName('img');
-    const srcUrlPrefix = 'docs/' + contentName + "/"
-    for(let i=0; i<images.length; i++) {
-        const old_src = images[i].getAttribute('src');
-        if(old_src.split('/')[0] !=='docs/' && old_src.split('/')[0] !=='assets/') {
-            const new_src = srcUrlPrefix + old_src;
-            images[i].setAttribute('src', new_src);
-            console.log(`processImages oldSrc=${old_src}, newSrc=${new_src}`)
-        }
+function processImages() {
+    let images = document.getElementsByTagName('img');
+    for (let i=0; i<images.length; i++) {
+        const img = images[i];
+        const fancyBoxLink = document.createElement('a');
+        fancyBoxLink.setAttribute('data-fancybox', '');
+        fancyBoxLink.setAttribute('data-caption', img.getAttribute('alt'));
+        fancyBoxLink.setAttribute('href', img.getAttribute('src'));
+        img.parentNode.insertBefore(fancyBoxLink, img);
+        fancyBoxLink.appendChild(img);
     }
-}
-
-function replaceWithLoader(targetElement, loadingPrompt='Loading...') {
-    let loaderHtml = '<div class="d-flex align-items-center w-100 border border-2 border-primary rounded p-4">';
-    loaderHtml += '<p class="lead text-primary m-0">' + loadingPrompt + '</p>';
-    loaderHtml += '<div class="spinner-border ms-auto text-primary" role="status" aria-hidden="true"></div>';
-    loaderHtml += '</div>';
-    targetElement.innerHTML = loaderHtml;
-}
-
-function fetchContent(contentName) {
-    const contentDiv = document.getElementById('content-div')
-    replaceWithLoader(contentDiv, 'Loading content...');
-    let urlPrefix = 'docs/' + contentName + '/';
-    $.ajax({
-        url: urlPrefix + 'content.html',
-        cache: false,
-        dataType: 'html',
-    })
-    .done(async function(html) {
-        contentDiv.innerHTML = '';
-        await $('#content-div').append(html);
-        processAnnotations();
-        processImages(contentName);
-    })
-    .fail(function (jqXHR, textStatus) {
-        // alert("Could not find the content you are looking for. (" + textStatus + ")");
-        $('#content-div').append("Could not find the content file you are looking for.  /  ");
-        new Error('ContentNotFound');
-    })
-}
-
-function fetchFootnotes(contentName) {
-    const footnoteDiv = document.getElementById('footnotes-div');
-    replaceWithLoader(footnoteDiv, 'Loading footnotes...');
-    let urlPrefix = 'docs/' + contentName + '/';
-    $.ajax({
-        url: urlPrefix + 'footnotes.html',
-        cache: false,
-        dataType: 'html',
-    })
-    .done(async function(html) {
-        footnoteDiv.innerHTML = '';
-        await $('#footnotes-div').append(html);
-        processFootnotes();
-        processImages(contentName);
-    })
-    .fail(function (jqXHR, textStatus) {
-        // alert("Could not find the content you are looking for. (" + textStatus + ")");
-        $('#content-div').append("Could not find the footnote file you are looking for.  /  ");
-        new Error('FootnoteNotFound');
-    })
-}
-
-function setContentAttributes(contentName) {
-    const contentDiv = document.getElementById('content-div');
-    const readLink = document.getElementById('nav-read-link');
-    
-    contentDiv.setAttribute('data-ip-current-content', contentName);
-    if(contentName !== 'help') readLink.setAttribute('data-ip-prev-content', contentName);
-    if(contentName === '') {
-        changeStyle(readLink, 'disabled');
-    } else {
-        if(contentName !== 'help') removeStyle(readLink, 'disabled');
-    }
-}
-
-const handleContentLoadFormSubmit = (e=null) => {
-    if(e!==null) e.preventDefault();
-    let contentName = document.getElementById('content_input').value;
-    if(validateContentLoadForm()) {
-        try {
-
-            fetchContent(contentName);
-            fetchFootnotes(contentName);
-            setContentAttributes(contentName);
-        } catch (error) {
-            console.log(error.name + ': ' + error.message);
-        }
-    }
-}
-
-const validateContentLoadForm = () => {
-    const contentName = document.getElementById('content_input').value;
-    let validated = true;
-    if(typeof contentName === 'undefined' || contentName === null || contentName === '') {
-        validated = false;
-    }
-    if(contentName.split(' ').length > 1) {
-        validated = false;
-    }
-    return validated;
 }
 
 /*
@@ -298,7 +189,7 @@ function setFootnoteActionsMultipleDiv(selectedFootnoteElement) {
             const prev_index = (prev_same_index === null) ? null : foundFootnoteIndexes[prev_same_index];
             const next_same_index = (current_same_index < foundFootnotes.length - 1) ? current_same_index + 1 : null;
             const next_index = (next_same_index === null) ? null : foundFootnoteIndexes[next_same_index];
-            console.log(current_same_index, prev_same_index, prev_index, next_same_index, next_index);
+            // console.log(current_same_index, prev_same_index, prev_index, next_same_index, next_index);
 
             // set prev btn attributes
             document.querySelector('div#footnote-actions-multiple #prev-btn').setAttribute('data-ip-prev-footnote-index', prev_index);
@@ -312,7 +203,7 @@ function setFootnoteActionsMultipleDiv(selectedFootnoteElement) {
             // next btn
             document.querySelector('div#footnote-actions-multiple #next-btn').setAttribute('data-ip-next-footnote-index', next_index);
 
-            document.querySelector('div#footnote-actions-multiple').style.display = 'block';
+            document.querySelector('div#footnote-actions-multiple').style.display = 'none';
         } else {
             document.querySelector('div#footnote-actions-multiple').style.display = 'none';
         }
@@ -372,27 +263,4 @@ function handleFootnoteDivClick(fnElement) {
     let foundFootnote = getFirstFootnoteById(fnElement.getAttribute('id'));
     handleFootnoteClick(foundFootnote);
     scrollFootnoteIntoView(foundFootnote);
-}
-
-function gotoContent(contentName) {
-    const contentInput = document.getElementById('content_input');
-    if(contentName !== null && contentName !== '') {
-        contentInput.value = contentName;
-        handleContentLoadFormSubmit();
-    }
-}
-
-function handleReadClick() {
-    const prevContent = document.getElementById('nav-read-link').getAttribute('data-ip-prev-content');
-    const currentContent = document.getElementById('content-div').getAttribute('data-ip-current-content');
-    console.log(`handleReadClick() prevContent=${prevContent}, currentContent=${currentContent}`);
-    if(prevContent !== null && currentContent !== null) {
-        if(prevContent !== currentContent) {
-            gotoContent(prevContent)
-        }
-    }
-}
-
-function handleHowToClick() {
-    gotoContent('help');
 }

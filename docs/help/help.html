@@ -18,6 +18,9 @@
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
+    <!--FancyBox-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
     <title>Interactive Papers</title>
 </head>
 <body>
@@ -33,7 +36,7 @@
 </h1>
 <p class="lead" class="subtitle" id="subtitle">
     <!--Insert subtitle here (optional)-->
-    An <em>interactive</em> introduction to Interactive Papers.
+    Academic paper reader
 </p>
 
 <h3>What is Interactive Papers?</h3>
@@ -42,31 +45,43 @@
 </p>
 
 <h3>Reading</h3>
-<h5>View Content</h5>
-<p>On the top right corner, you should see an input field that says "Enter content name.." Enter the name of the content you wish to read there to view an interactive document.</p>
-<h5>Viewing References</h5>
+<h5>Viewing Footnotes</h5>
 <p>
-    References, or <em>"footnotes"</em> are marked in blue. Try clicking on the blue text at the end of this sentence, and its contents will appear at the bottom of the screen.
-    <a>[1]</a> <br />
-    Click on the "X" button on the bottom right corner of the screen to dismiss the footnote to return to your reading.
+    References, or <em>"footnotes"</em> are clickable, and are different from other 'nomral' text by having a dark gray font color and a bold font face. Try clicking on the text '[1]' at the end of this sentence, and the contents of the footnote will appear.
+    <a>[1]</a>
 </p>
 
 <h5>Finding Where a Footnote was Referenced in a Document</h5>
-<p>All the footnotes for this content are located at the very bottom of this page. Clicking on the footnote will bring you to the point in the original text where the footnote is referenced.</p>
+<p>For some documents, all the footnotes for this content are located at the very bottom of this page. Clicking on the footnote will bring you to the point in the original text where the footnote is referenced.</p>
+
+<h3>Using a Code Editor</h3>
+<p>Editing Interactive Papers can be done using any plain text editor (Notepad, TextEdit, ...), but we strongly recommend that you use a code editor, since it is much easier to edit code. We will be using Visual Studio Code(<a href="https://code.visualstudio.com">Download Link</a>) in this tutorial.</p>
+<h5>Opening the working directory in your code editor</h5>
+<p>Click "File" > "Open..." and open the folder that you just downloaded.</p>
+<img src="images/help.001.jpeg" style="max-height: 400px;" alt="Opening the working directory" />
+<p>If everything was successful, you should see the contents of the folder on the sidebar on the left side of the window. If the sidebar is hidden, click on the "File Explorer" button on the top left corner.</p>
+<img src="images/help.002.jpeg" style="max-height: 400px;" alt="Viewing the contents of the working directory" />
+<p>Double click on a file in the file browser to open the file and start editing.</p>
 
 <h3>Tutotrial</h3>
 <p>This tutorial will guide you through the basics of editing content for Interactive Papers. </p>
 
 <h5>0. Preparations</h5>
 <p>
-    1) Create a folder anywhere on your computer with the name "your-name-title-of-your-work" (No spaces or special characters allowed).<a>[2]</a> This is the folder you will be submitting.<br>
-    2) Inside, create 2 files, each called "content.html" and "footnotes.html". <br>
-    3) Optionally, create a folder called "images".
+    1) You should see 3 folders ('docs', 'scripts', 'styles') and 1 file('index.html') in the folder you just downloaded.<br>
+    2) Navigate to the 'docs' folder, and make a copy of the 'content' folder inside the docs folder.<br>
+    3) Name the copy of the folder “(Year)-(CourseName)-(Week#)-(Firstname)-(LASTNAME)”<a>[2]</a>, but you cannot include spaces or special characters.<br>
+    4) From now, we will call this folder the <b>'submission folder,'</b> since you will be submitting this folder only later when you submit your work. This is also the only folder that you are allowed to change the contents of the files contained within.<br>
+    <img src="images/help.003.jpeg" style="max-height: 400px;" alt="Renaming the submission folder" /><br><br>
+    5) Copy + paste your content to the correct position inside the 'index.html' in your <b>submission folder</b>.<br>
+    The position to paste in your content is marked with the <a>comment</a> "&lt;!-- CONTENT COMES HERE --&gt;".
+    <img src="images/help.004.jpeg" style="max-height: 400px;" alt="Pasting the content in the correct location" /><br>
 </p>
 
 <h5>1. Turning plain text to HTML</h5>
 
 <p>Let's say you wrote the following text. For the computer to format the text correctly, we need to add HTML tags.</p>
+<hr>
 <div class="student-submission">
     <div class="author">
         Hyunju Bae<br>
@@ -85,16 +100,17 @@
         The leaflet features two figures, one representing a peaceful Britannia and the other a Medusa-like Marianne. The figure of Britannia wears a full dress with a red cape, but the more noticeable part is her helmet, spear and shield. The whole wardrobe is vaguely reminiscent of Athena, who, in Greek mythology, provides the main tool for Perseus to kill Medusa. Britannia also holds the scales in her left hand, a traditional symbol of justice. She holds the Magna Carta, the constitution of England in her right hand. To Britannia's right, a ship of the line proudly sits in the harbor, flaunting the power of the English navy. A golden lion sits at her feet, a symbol of the British monarchy. [2]
     </p>
 </div>
+<hr>
 
-<p>Copy and paste your work into a text editor of your choice, and add &quot;&lt;div&gt;&quot; tags as shown below, and &quot;&lt;p&gt;&quot; tags for each paragraph of your writing.</p>
+<p></p>
 <p>
-1. The entire text should be surrounded in &quot;&lt;div&gt;&quot; tags with the class of "student-submission". <br>
+1. The entire content section(what you just pasted in. not anything else.) should be surrounded in &quot;&lt;div&gt;&quot; tags with the class of "student-submission". <br>
 2. Author information (first 4 lines) should be surrounded in &quot;&lt;div&gt;&quot; tags with the class of "author". <br>
 3. Each paragraph should be wrapped in &quot;&lt;p&gt;&quot; tags. <br>
-4. Insert &lt;br&gt; tags in place of line breaks within tags (such as &lt;div&gt; and &lt;p&gt;) <br>
+4. Insert &lt;br&gt; tags in place of line breaks(the 'enter' key) <br>
 </p>
 
-<p class="lead mb-0">Code (content.html): </p>
+<p class="lead mb-0">Code (index.html): </p>
 <pre class="mt-0 mb-4"><code class="language-html"><!--<div class="student-submission">
     <div class="author">
         Hyunju Bae<br>
@@ -114,9 +130,9 @@
     </p>
 </div>--></code></pre>
 
-<h5>2. Add Footnotes to Writing</h5>
-<p>Now, let's make the annotations clickable, or interactive. Surround footnote/endnote markers with &quot;&lt;a&gt;&quot; tags.<a>[3]</a></p>
-<p class="lead">Code (content.html): </p>
+<h5>2. Add Footnote Links to Writing</h5>
+<p>Now, let's make the annotations clickable(or interactive!). Surround footnote markers with &quot;&lt;a&gt;&quot; tags to create links to footnote content.<a>[3]</a></p>
+<p class="lead">Code(index.html): </p>
 <pre class="mt-0 mb-4"><code class="language-html"><!--<div class="student-submission">
 <div class="author">
     Hyunju Bae<br>
@@ -137,11 +153,12 @@
 </div>--></code></pre>
 
 <h5>3. Write Footnote Content</h5>
-<p>Now, we need to write the actual contents of the footnotes. Open the "footnotes.html" file that you just created, and use the code template below to create contents for your footnotes.</p>
+<p>Now, we need to write the actual contents of the footnotes. Scroll down until you see the <a>comment</a>&nbsp; '&lt;!-- FOOTNOTES COME HERE --&gt;', and use the code template below to create contents for your footnotes. All footnotes must be contained inside the div with a class of 'footnotes'</p>
+<img src="images/help.005.jpeg" style="max-height: 400px;" alt="Locating the footnotes div" /><br>
 
-<p class="lead">Code (footnotes.html): </p>
+<p class="lead">Code (index.html): </p>
 <pre class="mt-0 mb-4"><code class="language-html"><!--<div class="footnote" id="[0]">
-    You did it! This is a footnote. Click on the "X" on the far right corner to close this footnote.
+    Each footnote should look like this. Write the contents here, inside the div tags.
 </div>--></code></pre>
 <p>The class attribute of the &lt;div&gt; should be "footnote", and the id attribute shoudl be the <strong>footnote ID</strong>. Anything can go into the contents of a footnote, including images and custom HTML code.</p>
 
@@ -168,17 +185,17 @@
 </code></pre>
 
 <h6>Display Text</h6>
-<p>By default, Interactive Paper assumes the <strong>display text</strong> is the footnote <strong>ID</strong>. If you want the <strong>ID</strong> and <strong>display text</strong> to be different (for instance, to custom style your annotations using HTML code), specify the footnote <strong>ID</strong> using the "data-ip-footnote-id" attribute in the &lt;a&gt; tag.</p>
+<p>By default, Interactive Papers assumes the <strong>display text</strong> is the footnote <strong>ID</strong>. If you want the <strong>ID</strong> and <strong>display text</strong> to be different (for instance, to custom style your annotations using HTML code), specify the footnote <strong>ID</strong> using the "data-ip-footnote-id" attribute in the &lt;a&gt; tag.</p>
 <pre class="mt-0 mb-4"><code class="language-html">&lt;!--Default: Display text (text between a tags) is the footnote name--&gt;
 &lt;a&gt;[5]&lt;/a&gt;
 
 &lt;!-- Custom Styling: Superscript --&gt;
 &lt;a data-ip-footnote-id="[5]"&gt;&lt;sup&gt;[5]&lt;/sup&gt;&lt;/a&gt;
 
-&lt;!--Display text can be totally different from the footnote name --&gt;
+&lt;!--Display text can be totally different from the footnote ID --&gt;
 &lt;a data-ip-footnote-id="[6]"&gt;&lt;sup&gt;Footnote 6&lt;/sup&gt;&lt;/a&gt; &lt;!-- Good (O) --&gt;
 
-&lt;!--Display text doesn't have to be unique, only the name should be unique.--&gt;
+&lt;!--Display text doesn't have to be unique, only the ID should be unique.--&gt;
 &lt;!-- Case A: This is fine (O) --&gt;
 &lt;a data-ip-footnote-id="[7]"&gt;[7]&lt;/a&gt;
 &lt;a data-ip-footnote-id="[8]"&gt;[7]&lt;/a&gt; 
@@ -188,10 +205,10 @@
 &lt;a data-ip-footnote-id="[9]"&gt;[10]&lt;/a&gt;     
 </code></pre>
 
-<p class="text-danger">[IMPORTANT] A footnote <strong>name</strong> must be unique(one and only) across an entire document.</p>
+<p class="text-danger">[IMPORTANT] A footnote <strong>ID</strong> must be unique(one and only) across an entire document.</p>
 
 <h5>Inserting links (normal &lt;a&gt; tags)</h5>
-<p>Interactive Paper assumes <strong>&lt;a&gt; tags without href and class attributes to be a footnote</strong>, and will process these as the web page is rendered to act as an internal footnote link. However, it is possible to use the traditional &lt;a&gt; tag with href specified to point it to an external link. If you specify a href attribute to an &lt;a&gt; tag, Interactive Papers will not process it as a footnote, but just treat it as a traditional link tag.</p>
+<p>Interactive Papers assumes <strong>&lt;a&gt; tags without href and class attributes to be a footnote</strong>, and will process these as the web page is rendered to act as an internal footnote link. However, it is possible to use the traditional &lt;a&gt; tag with href specified to point it to an external link. If you specify a href attribute to an &lt;a&gt; tag, Interactive Papers will not process it as a footnote, but just treat it as a traditional link tag.</p>
 
 <pre class="mt-0 mb-4"><code class="language-html">&lt;!-- This is considered as a footnote --&gt;
 &lt;a&gt;[1]&lt;/a&gt;
@@ -201,12 +218,13 @@
 </code></pre>
 
 <h5>Inserting Images</h5>
-<p>If your submission contains images, whether in your main text or your footnotes, create a folder called 'images' in your submissions folder and save all your images there.</p>
+<p>If your submission contains images, whether in your main text or your footnotes, save all your images there.</p>
 
 <h6>Use &lt;img&gt; tags</h6>
 <p>Add the following code where you want your images to go.</p>
 <pre class="mt-0 mb-4"><code class="language-html"><!--<img src="images/image_file_name.jpg" alt="image_file_name">--></code></pre>
 <p>The 'src' attribute specifies the location and file name of the <strong>s</strong>ou<strong>r</strong><strong>c</strong>e image file. The 'alt' is text that is displayed <em>'alt'ernatively</em> when for some reason the computer cannot find the image file that you specified in the 'src' attribute. It can be the image file name, or it could be a short description of the image.</p>
+<p>The image can be any image file saved on your computer, or on the internet as long as it is a valid path to a file or a URL to an image.</p>
 <p><span class="text-danger"><strong>* The image file name must not contain any spaces or special characters.</strong></span><a>[5]</a></p>
 
 
@@ -238,21 +256,24 @@
             <!-- Start of Footnotes -->
             <!-- This is where you enter all of your footnotes -->
 
-<div class="footnote" id="[1]">
-    You did it! This is a footnote. Click on the "X" on the far right corner to close this footnote.
-</div>
-<div class="footnote" id="[2]">
-    Sample folder name: 'hyunju-bae-the-contrast-1792-which-is-best'
-</div>
-<div class="footnote" id="[3]">
-    Don't worry if you want to use traditional link tags(&lt;a href="http://some.external.link.com"&gt;&lt;/a&gt;) to attach external links. This is still supported and will be covered below in the "Documentation" section in more detail. In short, if you add a href attribute to a link(&lt;a href=""&gt;) tag, Interactve Papers will not process it as an internal footnote link, but as a traditional external link tag.
-</div>
-<div class="footnote" id="[4]">
-    You can reference the same footnote multiple times across a single document(like this example), but you cannot create two or more footnotes with the same name.
-</div>
-<div class="footnote" id="[5]">
-    You can use hypens('-') or underscores ('_') instead of spaces.
-</div>            
+            <div class="footnote" id="[1]">
+                You did it! This is a footnote. Click on the "X" on the far right corner to close this footnote.
+            </div>
+            <div class="footnote" id="[2]">
+                Sample folder name: '2021-Vichy-Week10-Youngwoo-KIM'
+            </div>
+            <div class="footnote" id="[3]">
+                Don't worry if you want to use traditional link tags(&lt;a href="http://some.external.link.com"&gt;&lt;/a&gt;) to attach external links. This is still supported and will be covered below in the "Documentation" section in more detail. In short, if you add a href attribute to a link(&lt;a href=""&gt;) tag, Interactve Papers will not process it as an internal footnote link, but as a traditional external link tag.
+            </div>
+            <div class="footnote" id="[4]">
+                You can reference the same footnote multiple times across a single document(like this example), but you cannot create two or more footnotes with the same name.
+            </div>
+            <div class="footnote" id="[5]">
+                You can use hypens('-') or underscores ('_') instead of spaces.
+            </div>
+            <div class="footnote" id="comment">
+                Comments are sections of the code file that are visible to humans, but ignored by the computer. Comments are used to leave notes/memos in sections of the code to provide more clarity in the source code. Each programming lanugage has different conventions for writing comments. HTML comments start with '&lt;!--' and end with '--&gt;'. Javascript single-line comment start with '//' (double backslash), and multi-line comments (spanning multiple lines) begin with '/*' and end with '*/'
+            </div>            
 
             <!-- End of Footnotes -->
         </div>
@@ -260,6 +281,7 @@
     
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script type="text/javascript" src="../../scripts/viewer.js"></script>
 </body>
 </html>

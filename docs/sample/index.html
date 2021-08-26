@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icon Font-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="../../styles/viewer.css">
+    
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Interactive Papers</title>
+</head>
+<body>
+    <div class="container-xxl py-3">
+        <div class="row">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Interactive Papers</h2>
+            </div>
+            <!-- Start of Content -->
+            <div class="content col-md overflow-auto" id="content-div">
+                <div class="student-submission">
+                    <div class="author">
+                        Sample Student<br>
+                        Vichy France<br>
+                        Prof. Chad Denton<br>
+                        May 1, 2021<br>
+                    </div>
+                    
+                    <div class="title">Frederick R. Dickinson, “The Japanese Empire,” <i>Empires at War</i>: Interactive Paper of the Introduction</div>                 
+
+                    <blockquote><b><a data-ip-footnote-id="Frederick-R.-Dickinson">Frederick R. Dickinson</a></b> is Professor of History at the University of Pennsylvania. He is the author of <i>War and National Reinvention: Japan in the Great War, 1914–1919</i> (Harvard University Asia Center, 1999), <i>Taisho tenno</i> (Taisho Emperor, Minerva Press, 2009 [in Japanese]), and <i>World War I and the Triumph of a New Japan, 1919–1930</i> (Cambridge University Press, 2013).</blockquote>
+
+
+
+
+<blockquote><b>Abstract and Keywords</b> For Japan, the First World War was a golden opportunity to expand both formal and informal empire in the Asia/Pacific region. Japanese troops occupied China’s Shandong province (1914–1922) and Siberia (1918–1922), the Japanese navy assumed control of German Micronesia (from 1914) and the “Twenty-One Demands” granted Tokyo extensive political and economic privileges throughout China (June 1915). Like many of its allies, Japan in 1919 struggled to maintain the integrity of its formal empire in the face of new appeals for self-determination. In East Asia, however, the most salient imperial concern raised by the First World War was not the prospect of decolonization but the enormous new potential displayed by this relative newcomer to the imperial game, Japan. The Washington Conference (1921-2) accentuates just how inadequate the Paris Peace Conference was in dealing with this most critical new imperial question in Asia.</blockquote>
+
+<blockquote><b>Keywords:</b>  Japan, First World War, East Asia, Washington Conference, Shandong</blockquote>
+
+<p><a>[Q1]</a> There is, perhaps, no better glimpse of the long-term chronological scope and widespread geographic expanse of the First World War than coverage of developments in East Asia. Long before the assassination of Archduke Franz Ferdinand in 1914, East Asia had become a critical arena of imperial struggle, competition that would both affect the course of the Great War and be irrevocably transformed by it. In 1895, historian and grandson of an American president, <u>Brooks Adams</u>,<a>[SRC1]</a> declared that “<a data-ip-footnote-id="Eastern-Asia-is-the-prize-for-which-all-the-energetic-nations-are-grasping">Eastern Asia is the prize for which all the energetic nations are grasping</a>.”<a>[1]</a> With the military defeat of the principal political, military, and cultural hegemon of Asia, Qing China, in that year, all eyes turned east to what was now the newest arena of imperial opportunity. Although the great European powers never colonized China, by the eve of the First World War they owned most of the Chinese economy.<a>[2]</a> And position in China had become a critical gauge of relative imperial might.</p>
+
+<p><a>[Q2]</a> The Great War struck a fatal blow to <u>nineteenth-century order</u> <a>[ARG1]</a> not simply because of the physical destruction of Europe or the implosion of four empires near the European heartland. Rather, it exposed the limits of expansion in an area most recently celebrated as the “prize” of imperial competition. By the end of the war, the great European empires had lost substantial ground in the Asia/Pacific region to the meteoric rise of two very new empires, the United States and Japan. By resorting to major armed conflict, the long-term imperial rivalries that had spurred the Great War had, in other words, accelerated the shift of global power eastwards. Happily poised to assume a new leadership role in the region were statesmen of the vastly expanded empire of Japan.</p>
+
+
+                </div>
+            </div>
+            <!-- End of Content -->
+            
+            <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+            <div class="col-md-4" id="footnote-viewer-container" style="display: none;">
+                <button type="button" class="btn-close mt-3" aria-label="Close" onclick="handleCloseFootnoteViewerClick()"></button>
+                <div class="footnote-viewer" id="footnote-viewer"></div>
+                <div id="footnote-actions-multiple" class="mt-3" style="display: none;">
+                    <i id="prev-btn" class="bi bi-chevron-left" style="color: inherit; cursor: pointer;" onclick="handlePreviousSameFootnoteClick(this)"></i>
+                    <span id="current">1</span> / <span id="total">1</span>
+                    <i id="next-btn" class="bi bi-chevron-right" style="color: inherit; cursor: pointer;" onclick="handleNextSameFootnoteClick(this)"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="footnotes hidden" id="footnotes-div">
+            <!-- Start of Footnotes -->
+            <!-- This is where you enter all of your footnotes -->
+
+            <div class="footnote hidden" id="[0]">
+                <img src="images/contrast.jpg" alt="contrast">
+            </div>
+            <div class="footnote" id="[Q1]">
+                What region acted as a critical setting for imperial competition before and during the First World 
+                War?
+            </div>
+            <div class="footnote" id="[Q2]">
+                What kind of downfall of the European powers was signalled by the First World War?
+            </div>
+			<div class="footnote" id="[1]">
+                Cited in Akira Iriye, <i>Across the Pacific: An Inner History of American–East Asian Relations</i> (New York: Harcourt, Brace, & World, 1967), 77.<br>
+                <br><p>Page 77a</p>
+                  <img src="https://books.google.co.kr/books/content?id=bFtuAAAAMAAJ&pg=PA77&img=1&pgis=1&dq=%22Eastern+Asia+is+the+prize+for+which+all+the+energetic+nations+are+grasping%22&sig=ACfU3U2CB1UjTapaxdbloy5CV76FqGlhSQ&edge=0" alt="Original source of the quotation">
+                <br>
+                <br>
+                <br><p>Page 77b</p>
+                <img src="https://books.google.co.kr/books/content?id=0LMqAAAAYAAJ&pg=PA77&img=1&pgis=1&dq=%22Since+all+the+industrial+powers+were+pictured+as+seeking+an+outlet+for+their+surplus+goods+,+and+since+China%22&sig=ACfU3U1wDohkYE1Rq1p4O3YhBiKePAVv7A&edge=0" alt="Original source of the quotation">
+              <br>
+              <br>
+                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1544700344l/43216518._SY475_.jpg" alt="Image of the cover of the book Across the Pacific: An Inner History of American-East Asian Relations"><br>
+                <br>
+                
+			</div>
+			<div class="footnote" id="[2]">
+                According to Chi-ming Hou, foreign interests owned 84 percent of all steamer shipping (1907), 93 percent of railroads (1911), 90 percent of coal production (1914), and 100 percent of iron ore and pig iron production (1914) in China before the Great War. Chi-ming Hou, <i>Foreign Investment and Economic Development in China 1840–1937</i> (Cambridge, MA: Harvard University Press, 1965), 127–8.<br>
+                <br>
+                Page 127<br>
+                <br>
+                <i>Share of Foreign Capital</i><br>
+                <br>
+                The most obvious link between foreign investment and China's economic modernization was that the former not only performed the pioneering entrepreneurial function of introducing modern technology into a number of fields but actually financed a large share of the modern sector of the economy. For instance, railroads were in the main either foreign-owned or built with foreign loans. According to one calculation, railroads under foreign control (foreign ownership or control through loans) accounted for as much as 78, 93, and 98 percent of all railroads in China (Manchuria included) in 1894, 1911, and 1927 respectively. The percentage went down to 74 in 1931, but went up again to 91 in 1937 after Japan had built more railroads in Manchuria.[6]<br>
+                <br>
+                In water transportation, too foreign capital remained predominant, as shown in Table 28. The figures in Table 28 refer to steamers only; Chinese junks and foreign sailing vessels are not included. However, the situation would not change materially by the latter's inclusion.[7] As expected, the Chinese share in domestic shipping (bewteen Chinese ports) was higher than its share in foreign shipping (between a foreign and a Chinese port). If junks and sailing vessels are invluded, the Chinese share in domestic shipping increases from 23 percent in 1909-1913 to 28 percent in 1925-1929, 30 percent in 1930-1934, and about 36 percent in 1935-36.[8]<br>
+                <br>
+                Foreign capital also dominated iron and coal mining. It was present in virtually all modern iron mines and works through either Sino-foreign joint ownership or loans. Almost 100 percent of the pig iron and 95-100 percent of the iron ore that was produced by modern iron mines in China before 1937 came from mines that were financed wholly or in part by foreign capital. Modern mines<br>
+                <br>
+                Page 128<br>
+                <br>
+                Table 28. Foreign share in the modern sector of the Chinese economy (percent)<br>
+                <br>
+                <img src="images/Table28.jpg" alt="Table 28 with notes">
+			</div>
+	
+				<div class="footnote" id="Frederick-R.-Dickinson">
+              
+				<img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Professor_Frederick_Dickinson_of_the_University_of_Pennsylvania_Department_of_History.jpg" alt="Frederick Dickinson">
+
+               		<p>Frederick R. Dickinson is a Professor of Japanese History at the University of Pennsylvania and Co-Director of the Joseph H. Lauder Institute of Management and International Studies. Dickinson specializes in modern Japanese as well as East Asian diplomatic history. He has written books and has had papers published on a multitude of topics related to his area of concentration. He holds degrees from both Kyoto University and Yale University, where he received his Ph.D. in History.</p>
+
+                       <p>Dickinson holds an M.A. in International Politics from Kyoto University (Kyoto, Japan, 1986) and an M.A. (1987) and Ph.D. (1993) in History from Yale University. He currently teaches courses in the University of Pennsylvania Department of History on modern Japan, East Asian diplomacy, as well as politics and nationalism in Asia. He also directs the Master of Arts track within the Lauder Institute of Management and International Studies. The Japanese Ministry of Education, the Fulbright Commission and the Japan Foundation have all conferred grants upon him, and he was a National Fellow at the Hoover Institution (Stanford University, 2000-1) and Visiting Research Scholar at the International Research Center for Japanese Studies (Kyoto, 2011–12). He has held visiting professorships at Swarthmore College, Katholieke Universiteit Leuven (Belgium), Kyoto University, and Kwansei Gakuin University. Dickinson has also served as Acting Director of the Center for East Asian Studies at his home institution, Penn (2008-9).</p>
+
+               		<p>Dickinson was born in Tokyo, and raised in Kanazawa and Kyoto, all in Japan.</p>
+
+               		From "<a target="_blank" href=https://wikipedia.org/wiki/Frederick_Dickinson>Frederick Dickinson</a>," Wikipedia 
+			</div>
+                <div class="footnote" id="Eastern-Asia-is-the-prize-for-which-all-the-energetic-nations-are-grasping">
+                    the view that the world was becoming smaller, industrial and agricultural production rapidly increasing, non-Western peoples astir, and the techniques of warfare improving, it followed that the Americans could no longer be indifferent to what happened in other parts of the world. Above all, the United States should not be left behind other industrial countries in expanding their trade with Asian peoples. The image of East Asia, in particular of China, as a vast potential market for American goods had existed since the early 1800's. What characterized the 1890's was a sense of desperation because of the view that man's productive forces were expanding much more rapidly than his ability to consume. One need not take seriously such a hysterical outburst as that of Jerry Simpson: "We are driven from the markets of the world!"; or even of the more respectable A. J. Beveridge: "American factories are making more than the American people can use; American soil is producing more than they can consume. Fate has written our policy for us; the trade of the world must and shall be ours." Essentially, these statements are notable for their defensive nature, and this characterizes American economic writings at this time. As Brooks Adams said, <b>"Eastern Asia is the prize for which all the energetic nations are grasping."</b> Since all the industrial powers were pictured as seeking an outlet for their surplus goods, and since China seemed to be their primary target, the United States should not be left out in the competition. It was assumed by many that the comptetition would not be a free competititon under conditions of laissez-faire. Brooks Adams was an exceptional case when he wrote, “Our geographical position, our wealth , and our energy preeminently fit us to enter upon the development of Eastern Asia and to reduce it to part of our own economic system. America's economic supremacy, however, did not offer much consolation to many of Adams' contemporaries, who felt that the foreign governments were energetically pushing their nationals' economic activities thus interfering with the natural law of selection
+                </div>
+   
+            <div class="footnote" id="[SRC1]">
+                Brooks Adams was a grandson of John Quincy Adams, the sixth president of the US. He believed that the rise and fall of commercial civilizations was cyclical. He also believed  that people's greed for wealth caused distrust and dishonesty, and eventually chaos in society. However, he considered Eastern Asia as a "prize."
+
+            </div>
+         
+            <div class="footnote" id="[ARG1]">
+                The First World War in East Asia could be viewed as a game changer with a fall in the Western powers and the rise of a new empire--'Imperial Japan' who vigorously spread its influence across China. In other words, Japan had a chance to construct a new hegemony in East Asia, which would later lead into the "Greater East Asia Co-prosperity Sphere" (大東亜共栄圏).
+
+            </div>
+        
+
+            <!-- End of Footnotes -->
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../scripts/viewer.js"></script>
+</body>
+</html>

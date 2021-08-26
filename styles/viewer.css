@@ -3,9 +3,23 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
 }
 
+h2:first-of-type {
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #666666;
+    font-weight: bold;
+}
+
+blockquote {
+    margin-left: 40px;
+}
+
 div.content {
     border: solid;
-    border-width: 0 0 1px 0;
+    border-width: 1px 0;
     border-color: rgb(214, 219, 214);
     height: calc(100vh - 100px);
     position: relative;
@@ -81,14 +95,19 @@ div.footnotes div.footnote {
 div.footnote-name {
     font-weight: bold;
     margin: 0 0 5px 0;
+    display: inline;
+}
+
+.hidden {
+    display: none;
 }
 
 div#footnote-viewer-container {
     background: rgb(246, 247, 249);
     border: solid rgb(217, 223, 226);
     border-width: 1px 0;
-    max-height: 100%;
-    overflow: auto;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
     flex-direction: column;
 }
 
@@ -99,6 +118,7 @@ div#footnote-viewer-container {
 
     div#footnote-viewer-container {
         background: rgb(246, 247, 249);
+        max-height: 100%;
         border: none;
         position: fixed;
         left: 0;
