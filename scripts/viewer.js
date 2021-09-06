@@ -89,10 +89,12 @@ function processFootnotes() {
     let footnotes = document.getElementById('footnotes-div').getElementsByClassName('footnote');
     for (let i=0; i<footnotes.length; i++) {
         const footnoteIdDiv = document.createElement('div');
-        const footnoteIdContent = document.createTextNode(footnotes[i].getAttribute('id'));
-        footnoteIdDiv.setAttribute('class', 'footnote-name');
-        footnoteIdDiv.appendChild(footnoteIdContent);
-        footnotes[i].insertBefore(footnoteIdDiv, footnotes[i].firstChild);
+        if(!footnotes[i].classList.contains('hide-id')) {
+            const footnoteIdContent = document.createTextNode(footnotes[i].getAttribute('id'));
+            footnoteIdDiv.setAttribute('class', 'footnote-name');
+            footnoteIdDiv.appendChild(footnoteIdContent);
+            footnotes[i].insertBefore(footnoteIdDiv, footnotes[i].firstChild);
+        }
         footnotes[i].setAttribute('onclick', 'handleFootnoteDivClick(this)');
     }
 }
