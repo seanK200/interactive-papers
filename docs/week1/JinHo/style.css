@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:500|Roboto:100,300");
+
+@import url("https://fonts.googleapis.com/css?family=Muli:300, 800");
+
+#block1 h1 {
+  color: var(--whiteish);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html body {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Roboto";
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+main {
+  background-color: #eee;
+}
+
+.navbar {
+  height: 15vh;
+  background-color: white;
+}
+
+.nav-link {
+  color: black;
+  font-size: 1em;
+}
+
+.navbar-collapse {
+  text-align: left;
+}
+
+.rounded-circle {
+  height: 120px;
+}
+
+.blank {
+  height: 5vh;
+  width: 100vw;
+}
+
+#navrep {
+  height: 15vh;
+}
+
+.logo {
+  display: none;
+}
+
+.logo img {
+  height: 15vh;
+}
+
+.navbar-brand {
+  display: none;
+}
+
+h2 i {
+  font-size: 0.5em;
+}
+
+@media only screen and (max-width: 768px) {
+  .rounded-circle {
+    display: none;
+  }
+
+  .navbar {
+    height: auto;
+  }
+
+  .navbar-brand {
+    display: block;
+  }
+
+  #navrep {
+    height: 10vh;
+  }
+
+  .logo {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 800px) {
+  .mx-auto {
+    display: none;
+  }
+}

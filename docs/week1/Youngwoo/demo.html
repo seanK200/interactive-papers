@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+          <h3 style="margin-top: 0;">Herodotus, The Histories</h3>
+          <p>
+            Book 3, chapter 17 [1] After this, Cambyses planned three campaigns-
+            one against the Carthaginians, another against the Ammonians, and
+            the third against the long-lived Ethiopians living in Libya at the
+            Southern Sea. [2] After careful deliberation, he resolved to divide
+            his forces, sending his navy against the Carthaginians and dividing
+            his land troops, sending some of them against the Ammonians. To the
+            Ethiopians he would first send spies, allegedly for the sole purpose
+            of bearing gifts for their king, but whose true mission was to
+            observe everything they could and to determine whether the so-called
+            <a>Table of the Sun</a> really did exist in the land of these
+            Ethiopians.
+          </p>
+
+          <p>
+            Book 3, chapter 18 [1] The Table of the Sun is said to be something
+            like this. There is a meadow which lies at the approach to the town
+            filled with boiled meat from
+            <b>every kind of four-footed animal.</b> During the night, the
+            current magistrates of the town procure the meat and set it in this
+            meadow, and during the day anyone who wishes may come there to feast
+            on it. The local inhabitants, however, claim that it is the earth
+            itself which gives forth the meat on each occasion it appears. Such
+            is the description that is given of the Table of the Sun.
+          </p>
+
+          <p>
+            Book 3, chapter 19 [1] Once Cambyses decided to send the spies, he
+            immediately sent for the
+            <b>Fish-eaters</b> from Elephantine, who knew the Ethiopian
+            language. [2] When his men had set out to go after the Fisheaters,
+            he ordered his navy to sail against Carthage.
+          </p>
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <!-- This is where you enter all of your footnotes -->
+        <div class="footnote hide-id" id="Table of the Sun">
+          <b>e j</b><br /><b>(C)</b> probably viewed as important by the
+          persians because it seems to have been viewed as the source of power
+          for the eitiopians, and thus something to steal/destroy so that he
+          could put them under submission. Not entirely a new idea for rulers of
+          the mesopotamia/Persia. Been happening since biblical times.
+        </div>
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>
