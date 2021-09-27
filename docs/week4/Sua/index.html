@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+          <p>
+            <i>Ethnology</i> <a data-ip-footnote-id="[1]_1">[1]</a><br /><br />
+            South-Western Ethiopia the country that lies south of the river Abay
+            and west of the head-waters of the Webi-Shabelle, was occupied
+            before the Galla invasion by peoples of Hamitic <a>[2]</a> stock who
+            may be referred to as Sidama and represent one of the waves of
+            Europoid immigrants known as Hamites are Kushites. The first
+            inhabitants of north-east Africa seemed to have been negroes, who
+            were gradually expelled or absorbed by the Hamitic populations that
+            followed them. That there was contact between the two races is clear
+            from the negroid physical characters of many of the inhabitants of
+            Ethiopia; and in fact there still remain a number of the tribes of
+            the Abyssinian-Sudan border which may be taken to represent the
+            original negro population and are known collectively as Shangalla, a
+            name derived from the Amharic word for ‘negro’. These negro peoples
+            include some of the tribes of Dar Fung, and others extending as far
+            south as the Konso between Lake Chamo an Lake Stephanie.<br /><br />
+
+            <a data-ip-footnote-id="Hamites"
+              >The Hamites seemed to have entered north-east Africa in 3 main
+              waves which may be distinguished thus</a
+            >: (A) the Proto-or A-Hamites, perhaps represented today by the Nera
+            or ‘Barya’ and the Badena or Kunama of Eritrea, though both the
+            ethnic and the linguistic position of these people is very
+            uncertain. (B) The early or B-Hamites, represented by the peoples of
+            the northern zone (Beja), central zone (Agau), and southwestern zone
+            (Sidama). (C) The Later of C-Hamites, represented by the peoples of
+            the eastern zone (Galla, Somali, Afar or Danakil, and Saho). During
+            the later periods of the Hamitic movement there came yet another
+            wave of immigration this time of Semitic peoples from south-west
+            Arabia, the ancestors of the present day Semitic speaking
+            Abyssinians. <a data-ip-footnote-id="[1]_2">[1]</a>
+          </p>
+          <br /><br />
+          <img
+            src="images/330px-Sub-Saharan_Africa_with_borders.png"
+            alt="Sub-Saharan Africa Map"
+          />
+          <p>
+            <b>The Map of Sub-Saharan Africa with Borders</b> (from
+            <a
+              href="https://en.wikipedia.org/wiki/Sub-Saharan_Africa#/media/File:Sub-Saharan_Africa_with_borders.png"
+              >https://en.wikipedia.org/wiki/Sub-Saharan_Africa#/media/File:Sub-Saharan_Africa_with_borders.png</a
+            >)
+          </p>
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <!-- This is where you enter all of your footnotes -->
+        <div class="footnotes" id="[1]_1">
+          <b>(AUTH)</b> It is surprising that a document first written in 1660
+          (period @ the end of oliver cromwell, etc) put so much emphasis &
+          research into ethnicity. how was this information able to be
+          connected? Is it perhaps not so scientific (esp. with negroid physical
+          characteristics cited as evidence) or more scientific than we are led
+          to believe (esp. with analyzing language similarities)
+        </div>
+        <div class="footnotes" id="[2]">
+          <b>(CON)</b> Does this name refer to the theory that Africans are
+          descendants of Ham?
+        </div>
+        <div class="footnotes" id="Hamites">
+          footnote for Hamites
+        </div>
+        <div class="footnotes" id="[1]_2">
+          footnote for [1]_2
+        </div>
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>

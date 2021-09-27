@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+
+          <b><i>The name Prester John</i></b>
+          <p>
+            It is so common in Portugal and Europe for the Emperor of the
+            Abyssinians to be called by this name that anyone who undertakes to
+            write the history of Ethiopia and of the Abyssinian empire must
+            necessarily give some explanation of it. Since, however, almost all
+            the historians who have written about this country have argued about
+            this matter and examined and given different explanations and
+            versions of this name. I do not feel myself obliged to stop and
+            repeat what can easily be found in their works. I merely remark that
+            among the rest Father Nicolao Godinho of our Society, in the 5th
+            chapter of his ﬁrst book on the Abyssinians, treated this question
+            with greater learning and riper judgment than I bring to its
+            consideration. He makes two certain and very well established
+            assertions. The first is that the name Prester or Presbyter John was
+            at first given to a Christian, but Nestorian, emperor, who ruled in
+            the interior of Asia. His ordinary name or title was Jonanam,
+            derived from the prophet Jonah (whom they so name in their language;
+            Europeans have changed it to John in error). This name was common to
+            the rulers of that monarchy as that of Pharaoh was to the Kings of
+            Egypt. They called him Presbyter because of the cross that he always
+            carried aloft before him, as among us Archbishops and Primates do.
+            It is said that when he went to war he took two, one of gold and
+            another of precious stones. signifying by the crosses the Christian
+            religion which he professed, and by the precious material of which
+            they were made by so much as precious stones and gold are greater
+            than silver, copper, iron and any other metals, by so much was
+            <a
+              >he greater in power and glory than all the Kings of the world.</a
+            >
+            <br />
+            <br />
+            The 2nd thing that Father Nicolao Godinho asserts is quite certain.
+            It is that the attribution of this name of the Asiatic emperor to
+            the Emperor of Ethiopia originated in the mistake of Pero de
+            Covilhao. He was sent with a companion (as we shall relate in full
+            below) by King Dom Joao 2nd of illustrious memory to discover India
+            and the Christian emperor popularly called Prester John, whose fame
+            was then much celebrated in Europe. In Cairo, in Suaqhem and in
+            Adem, which he reached and to which he returned from India, he heard
+            many things told of the Emperor of the Abyssinians, among others
+            that he was a Christian, master of many great kingdoms, and that he
+            was in holy orders and carried a cross in his hand. He was persuaded
+            that he had found him and that this was the Prester John whom his
+            King had sent him to ﬁnd, and so much he wrote to him from Cairo.
+            This news was welcomed in Portugal and spread throughout Europe and
+            from then until now the Emperor of the Abyssinians has been held and
+            taken to be and has been given the name of, Prester John. The coming
+            to an end of Jonanam’s monarchy in Asia contributed to this, in that
+            for many years the name of no Christian emperor in Asia was heard
+            while the fame of this African one resounded daily. So the name of
+            Prester John was confirmed to him and withdrawn from the Asiatic.
+          </p>
+
+          <img src="Simena/images/Prester_John" at="Prester_John.jpeg" />
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <div
+          class="footnotes"
+          id="he greater in power and glory than all the Kings
+      of the world."
+        >
+          (ST) The author describes the king in awe saying that he is greater
+          than anyone, and expresses how important religion is to the king’s
+          authority and significance with the amount of crosses he carried, and
+          their material.
+        </div>
+        <!-- Start of Footnotes -->
+        <!-- This is where you enter all of your footnotes -->
+
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>

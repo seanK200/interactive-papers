@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+          <h3>“An Ethiopian embassy to Western Europe in 1306”</h3>
+          <img
+          src=https://allthatsinteresting.com/wordpress/wp-content/uploads/2015/06/clement-v-looking-dapper.jpg
+          />
+
+          <!-- <img src="images/map_catalan_atlas.png" alt="Catalan Atlas Map" /> -->
+
+          <p>
+            They also follow with the greatest devotion Ss. Paul, Antony the
+            first hermit, abbot Macharius, and other holy hermits. It is said
+            that their emperor is most <a>Christian</a>, to whom seventy-four
+            kinds and almost innumerable princes pay allegiance, except those
+            kings who observe the laws of Mahomet but submit to the
+            <a>emperor</a> in other things. It is known indeed that this
+            emperor, in the time of Clement V [Pope, 1305 to 1314] and the year
+            of our salvation 1306, sent thirty envoys to the king of the Spains
+            and offered him aid against the infidels. They also presented
+            themselves reverently before Pope Clement V <a>at Avignon</a> and,
+            instructed by many apostolic letters, came to <a>Rome</a> to visit
+            the churches of Peter and Paul. Having seen these they set forth
+            joyfully to return to their own country. But as they tarried many
+            days at Genoa awaiting fair weather for sailing, they were
+            questioned and left (so it is said) many things in writing about
+            their rites, customs and regions, which the same author has
+            published.
+          </p>
+
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <div class="footnotes hidden" id="Christian">
+          <b>(Q)</b> Why Christianity was powerful , impactful religion? What
+          kind of historic events influenced it?
+        </div>
+        <div class="footnotes hidden" id="emperor">
+          <b>(SU)</b> In the Ethiopian state, Christianity was more powerful
+          politically in comparison to Islam.
+        </div>
+        <div class="footnotes" id="at Avignon">
+          <b>(C)</b> This shows the historical background of Avignon Papacy,
+          which started from 1309. It makes me wonder the stance of Ethiopian
+          empire, as a Christian empire that doesn't belong in European
+          continent, within the tension btwn the king and the church
+        </div>
+        <div class="footnotes" id="Rome">
+          <b>(SU)</b> It is surprising that in the 14th century, Ethiopia gave
+          so much importance to Christianity that they would send ambassadors.
+        </div>
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>

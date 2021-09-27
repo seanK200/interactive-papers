@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Eugene</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Eugenej</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+
+          <img
+          src"https://cdn.britannica.com/31/31-050-66AA1DCA/Ethiopia-map-features-locator.jpg"
+          alt="ethiopia territory" />
+
+          <p>
+            In Ethiopia no one has yet had, or will have any suspicion of this
+            for they either do not know that such a name is given to their
+            Emperor or, if we tell them, they are amazed and think it strange;
+            there is nothing in their language that corresponds to it nor is
+            there any version of it. In Europe, however. someone may have been
+            inﬂuenced by the authority of Çagâ Zà Ab (whom Damiao de Goes in the
+            third part of his Chronicle of the King Don Manoel, chapter 60,
+            calls Zagazabo) an ambassador sent thither by King David to the Most
+            Serene Dom João 3rd of Portugal, and by that of Pedro,
+            <a>another Abyssinian</a> who accompanied Father Francisco Alvares
+            from Ethiopia to Portugal and thence to Italy. where he took the
+            Emperor David's letters to Pope Clement 7th. These two, Çagâ Zà Ab,
+            I mean, and Pedro wanted to devise versions of this name in their
+            language. They did so easily among people who had no knowledge of
+            it. They pretended what they liked and said that the name Prester
+            John had been taken from Belul and Jan and that this meant precious
+            Gian and that our people had corrupted Jan into John. All this is
+            ﬁction that has no justiﬁcation in fact. Yet the Valencian who
+            imagined that it must be Beldigian and that Belul Jan was not two
+            words but one had still <i>less</i>.
+          </p>
+
+          <p>
+            It is certain that the Abyssinians call their Emperor Jan and
+            sometimes they call him Belul also but the one is never joined with
+            the other; among them it would be a solecism and a very barbarous
+            expression if someone were to say 'Belul Jan' or ‘Jan Belul'. To
+            each of these two names, in fact, the word 'qhoj' is usually added,
+            which means the same as the word ‘my’ among us, when it is used to
+            signify love or tenderness as when one says to a child, as an
+            endearment, ‘my sweetheart, my prince, my king.’ This is nearly what
+            the Abyssinians mean when they address their King as ‘Janqhoj’,
+            ‘Ianqhoj' or ‘Belulqhoj’, though this second name is less often used
+            by them than the first. To come to the root from which they were
+            derived, it is this. They say that in the ancient language of
+            Ethiopia ‘Jan’ means '<a>elephant</a>', and because this animal is
+            so powerful and terrible compared with the rest, they applied its
+            name to the King as a title of honour and grandeur. So those who
+            call out at the gate of the Emperor’s enclosure for him to grant
+            their suits or send someone to hear their complaints at some
+            injustice that has been done to them, they name him by this name if
+            they are Amarâs, shouting at the tops of their voices ‘Janqhoj,
+            Janqhoj’ until the Emperor sends a servant to see what it is they
+            want. I said ‘if they are Amarâs’, for if they are Moors they shout
+            ‘Cidy, cidy’, if Portuguese “Senhor, senhor’, which is the same
+            thing, and if Tigrês ‘Adáriê”. Those of other nations and languages
+            also have their own words which are peculiar to themselves.
+          </p>
+          (from <a href="https://www.youtube.com">https://www.youtube.com)</a>
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <!-- This is where you enter all of your footnotes -->
+        <div class="footnotes" id="another Abbyssinian">
+          <b>(M)</b> Why would an Ethiopian help to make an inaccurate name for
+          the Ethiopian emperor?
+        </div>
+        <div class="footnotes" id="elepant">
+          <b>(C)</b> Ethiopia, a peninsula close to elephant populations uses
+          such animals to describe greatness and power, which shows how
+          geography and natural surroundings impact folklore.
+        </div>
+
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>
