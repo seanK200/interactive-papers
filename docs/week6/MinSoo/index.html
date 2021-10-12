@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+          <p>
+            In regard to the colonists, we will demonstrate to you that if they
+            need to recruit blacks in Africa to sustain the population of the
+            colonies at the same level, it is because they wear out the blacks
+            with work, whippings, and starvation; that, if they treated them
+            with kindness and as good fathers of families, these blacks would
+            multiply and that this population, always growing, would increase
+            cultivation and prosperity. . . .
+          </p>
+          <p>
+            <a data-ip-footnote-id="Hey"
+              >Hey! Do not step back from the duty that humanity imposes here
+              upon you, for fear of some interruption in the minor work that the
+              slave trade occasions in France? Did you heed this fear when with
+              bold hand you overturned all the abuses which hindered a free
+              Constitution?</a
+            >
+            These abuses, however, supported thousands of individuals; the
+            commotion caused by this revolution threw all fortunes into
+            incertitude, tightened all investment capital, suspended nearly all
+            work. What evil citizen dares, however, complain of this necessary
+            suspension! It is not, however, your blood that your tyrants shed;
+            they do not violate constantly the haven of your house; they do not
+            unjustly condemn you in order to have the right to sell you; they do
+            not snatch you from your home to plunge you in eternal captivity in
+            a foreign land. . . .
+          </p>
+          <p>
+            If some motive might on the contrary push them [the blacks] to
+            insurrection, might it not be the indifference of the National
+            Assembly about their lot? Might it not be the insistence on weighing
+            them down with chains, when one consecrates everywhere this eternal
+            axiom: that all men are born free and equal in rights. So then
+            therefore there would only be fetters and gallows for the blacks
+            while good fortune glimmers only for the whites? Have no doubt, our
+            happy revolution must re-electrify the blacks whom vengeance and
+            resentment have electrified for so long, and it is not with
+            punishments that the effect of this upheaval will be repressed. From
+            one insurrection badly pacified will twenty others be born, of which
+            one alone can ruin the colonists forever.
+          </p>
+          <p>
+            It is worthy of the first free Assembly of France to consecrate the
+            principle of philanthropy which makes of humankind only one single
+            family, to declare that it is horrified by this annual carnage which
+            takes place on the coasts of Africa, that it has the intention of
+            abolishing it one day, of mitigating the slavery that is the result,
+            of looking for and preparing, from this moment, the means.
+          </p>
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <div class="footnote hide-id" id="Hey">
+          <img
+            src="https://64.media.tumblr.com/cb70e783e17295f63af6211a7e1cd34a/tumblr_ow4xltklCD1tihjeco1_1280.png"
+            alt="Constitution"
+          />
+          <iframe
+            width="100%"
+            src="https://www.youtube.com/embed/SJ4GCQx46C4"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <b>(ST)</b> The questioning and direct address appeals to the ethos of
+          the audience
+        </div>
+
+        <!-- This is where you enter all of your footnotes -->
+
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>

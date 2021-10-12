@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+          <p>
+              <h5>Anonymous [a 15-16 year-old son of French planters in St. Domingue], My Odyssey (1793), from Althea de Puech Partham, ed., and trans., <a data-ip-footnote-id="odyssey">My Odyssey: Experiences of a Young Refugee from Two Revolutions</a> (Louisiana State University Press, 1959), 23-25, 27-28, 31-34, reprinted in Richard Lim and David Kammerling Smith, eds., The West in the Wider World (New York: Bedford/St. Martin’s, 2003), 150-152.</h5>
+              <br />
+            [The following day, the author joins a small contingent of French
+            militia troops.]<br /><br />
+            We were sitting down to dinner when
+            <a data-ip-footnote-id="signal"
+              >we saw their [the rebel slaves] signal, which is always the
+              burning of some stalks of sugar-cane</a
+            >. Our general, a man of appetite as well as of combat, decided we
+            should continue with our repast, and after giving several orders for
+            the safety of our quarters, sat down to dinner. We were eating
+            heartily until the moment a cannonball passed through the window and
+            carried away, right under our beards, the table and all the plates.
+            The general, infuriated by this mishap, mounted his horse with food
+            still in his mouth, and left camp with six hundred men and four
+            pieces of artillery. Two hours later one could not find a living
+            Negro within a circle of two and a half miles, and the roads were
+            strewn with their bloody remains. . . . <br /><br />
+            I pursued a Negro whose regalia caused me to judge him to be one of
+            the principal chiefs. As I was about to overtake him, he turned
+            around, took aim, but happily for me, could not make his powder fire
+            as it was too damp. I prepared myself to cleave his head with my
+            sword, whereupon he fell to his knees, kissed my boots, and told me,
+            with tears in his eyes, that he was my Mother’s godson, that he was
+            present at my birth, and carried me in his arms more than once, and
+            beseeched me not to kill him; that he was a good Negro and that he
+            had always loved the Whites. His manner disarmed me; I dismounted
+            from my horse before having him conducted to camp. However, a soft
+            sound made me quickly turn my head, and I saw the miserable
+            hypocrite, who had recharged his gun, aiming point-blank at my head;
+            being troubled at finding himself discovered, prevented him from
+            aiming accurately, and the bullet went past me. I fell upon him but
+            he was on guard for my attack; and there we were both acting as if
+            playing Prisoner’s Base. I caught my runner at the moment when he
+            was about to slash me and threw him into some weeds. Even then he
+            had the impudence to maintain that I had not seen correctly , and
+            that he loved the son of his godmother too much to try to kill him.
+            When he heard himself convicted by a number of soldiers who had just
+            arrived and had witnessed the incident, he changed his tune and told
+            me in his jargon: “Master, I know that is true. It is the Devil who
+            gets inside of this body of mine. I am a good nigger, but against my
+            will the Devil is too strong.” His excuse made me laugh despite my
+            anger, and had I been alone,
+            <a data-ip-footnote-id="certainly"
+              >I would certainly have saved him; but the soldiers seized him and
+              bound him to a tree to be shot.</a
+            >
+            When he saw that his fate was sealed, he began to laugh, sing, and
+            joke. At times, however, reviling us in a furious tone, at times
+            jeering at us in mockery. He gave the signal himself and met death
+            without fear or complaint. We found in one of his pockets pamphlets
+            printed in France, filled with commonplaces about the Rights of Man
+            and the Sacred [French] Revolution; in his vest was a large packet
+            of tinder and phosphate of lime. On his chest he had a little sack
+            full of hair, herbs, bits of bone, which they call a fetish; with
+            this, they expect to be sheltered from all danger; and it was, no
+            doubt, because of this amulet, that our man had the intrepidity
+            which the philosophers call Stoicism.
+          </p>
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <!-- This is where you enter all of your footnotes -->
+        <div class="footnote hide-id" id="odyssey">
+            <img
+            src="images/My Odyssey.png"
+            alt="My Odyssey"
+          /><br />
+          Screen capture of <i>My Odyssey: Experiences of a Young Refugee from Two Revolutions</i> from Google Books 
+        </div>
+
+        <div class="footnote hide-id" id="signal">
+          <b>(Q)</b> what is the meaning of this signal? Also, if the rebels
+          were able to deliberately give a signal that alerts their opponents,
+          wouldn't that mean the rebels are much larger/stronger than the
+          general's forces? <br /><br />
+          <img
+            src="images/African slave rebellion.jpg"
+            alt="African Slave Rebellion"
+          /><br />
+          <b> Painting of African Slave Rebellion </b> (from
+          <a
+            href="https://www.thoughtco.com/unforgettable-slave-rebellions-45412"
+            >https://www.thoughtco.com/unforgettable-slave-rebellions-45412</a
+          >)
+        </div>
+
+        <div class="footnote hide-id" id="certainly">
+          <b>(AUD)</b> Could this have originally been a diary, or was it
+          written for other Europeans to read and to be educated on his
+          experiences with African slaves?<br />
+
+          <iframe
+            width="100%"
+            src="https://www.youtube.com/embed/3NXC4Q_4JVg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>

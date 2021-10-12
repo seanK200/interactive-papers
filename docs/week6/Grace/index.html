@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <h3>
+            <a>David Hume</a>, “Of National Characters” (1748, 1754 and 1776), General
+            and Particular (multivolume <a>work</a> published between 1748-1808); from
+            Emmanuel Chukwudi Eze, ed., Race and the Enlightenment: A Reader
+            (Malden, MA: Blackwell, 2007), 32-33.
+          </h3>
+          <p>
+            … are <a>fitted to live</a> in all climates, such as dogs, horses,
+            etc. do not attain the same perfection in all. The courage of
+            bull-dogs and game-cocks seems peculiar to England. <a>Flanders</a> is
+            remarkable for large and heavy horses, Spain for horses light, and
+            of good mettle. Any breed of these creatures, transplanted from one
+            country to another, will soon lose the qualities, which they derived
+            from their native climate. It may be asked, why not the same with
+            men? <p>There are few questions more curious than this, or which will
+            more often occur in our inquiries concerning human affairs; and
+            therefore it may be proper to give it a full examination.</p>
+            <a>The human mind is of a very imitative nature</a>; nor is it
+            possible for any set of men to converse often together, without
+            acquiring a similitude of manners and communicating to each other
+            their vices as well as virtues. The propensity to company and
+            society is strong in all rational creatures; and the same
+            disposition, which gives us this propensity, makes us enter deeply
+            into each other’s sentiments, and causes like passions and
+            inclinations to run, as it were, by contagion, through that whole
+            club or knot of companions. Where a number of men are united into
+            one political body the occasions of their intercourse must be so
+            frequent, for defense, commerce and government, that, together with
+            the same speech or language, they must acquire a resemblance in
+            their manners, and have a common or national character, as well as a
+            personal one, peculiar to each individual. Now though nature
+            produces all kinds of temper and understanding in great abundance,
+            it does not follow, that <a>she</a> always produces them in like
+            proportions and that in every society the ingredients of industry
+            and indolence, valour and cowardice, humanity and brutality, wisdom
+            and folly, will be mixed after the same manner. In the infancy of
+            society, if any of these dispositions be found in greater abundance
+            than the rest, it will naturally prevail in the compositions and
+            give a tincture to the national character ...
+          </p>
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <div class+"footnote" id="David Hume"> <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/David_Hume.jpg" alt="Portrait_of_David_Hume"> source:https://commons.wikimedia.org/wiki/File:David_Hume.jpg </div>
+        <div class="footnote" id="work"> <iframe width="300" height="250" src="https://www.youtube.com/embed/Uq2QUrDPf44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> https://www.youtube.com/watch?v=Uq2QUrDPf44 </div>
+        <div class="footnote" id="fitted to live">
+          (M) Who is the author referring to when he says this?
+        </div>
+        <div class="footnote" id="Flanders"> <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Flag_of_Flanders.svg" alt="Flemish_Flag"> Flanders is a region in Northern Belgium. <br> source: https://en.wikipedia.org/wiki/Flanders</br> </div>
+        <div class="footnote" id="The human mind is of a very imitative nature">
+          (A) This part attempts to answer the question of what factor leads
+          humans to create a society with shared characteristics. However, it
+          seems to be a justification, not an answer resulted from a
+          well-constructed logic, for the Europeans' hierarchical perception of
+          mankind, distinguishing people by a standard of skin color.
+        </div>
+        <div class="footnote" id="she">
+          (SU) Nature is mostly described as a "she" in these texts.
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>

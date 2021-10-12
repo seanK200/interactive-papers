@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+
+          <img src="Images/Abolition of Slave Trade.jpg" alt="Abolition of Slave Trade" />
+          <p><b>Aboltion of Slave Trade</b>
+          </p>
+          <p>(from:https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTimeline_of_abolition_of_slavery_and_serfdom&psig=AOvVaw2CKSf2Qfbpa9zIPSHKOlGI&ust=1633631442786000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOCn1MK1tvMCFQAAAAAdAAAAABAD)
+          </p>
+          <p>
+            The humanity, justice, and magnanimity that have guided you in the
+            reform of the most profoundly rooted abuses gives hope to the
+            Society of the Friends of Blacks that you will receive with
+            benevolence its demand in favor of that numerous portion of
+            humankind, so cruelly oppressed for two centuries. 
+          </p>
+            This Society,
+            slandered in such cowardly and unjust fashion, only derives its
+            mission from the humanity that induced it to defend the blacks even
+            under the past despotism. Oh! Can there be a more respectable title
+            in the eyes of this august Assembly which has so often avenged the
+            rights of man in its decrees? 
+        </p> 
+            <a>You</a> have declared them, these rights;
+            you have engrave on an <a>immortal monument</a> that all men are
+            born and remain free and equal in rights; you have restored to the
+            French people these rights that despotism had for so long despoiled;
+            . . . you have broken the chains of feudalism that still degraded a
+            good number of our fellow citizens; you have announced the
+            destruction of all the stigmatizing distinctions that religious or
+            political prejudices introduced into the great family of humankind.
+            . . . 
+      </p>
+            We are not asking you to restore to French those political
+            rights which alone,nevertheless, attest to and maintain the dignity
+            of man; we are not even asking for their liberty. . . . 
+    </p>
+            The
+            immediate emancipation of the blacks would not only be a fatal
+            operation for the colonies; it would even be a deadly gift for the
+            blacks, in the state of <a>abjection and incompetence</a> to which cupidity
+            has reduced them. It would be to abandon to themselves and without
+            assistance children in the cradle or mutilated and impotent beings.
+  </p>
+            <a>It is therefore</a> not yet time to demand that liberty; we ask only
+            that one cease butchering thousands of blacks regularly every year
+            in order to take hundreds of captives; we ask that one henceforth
+            cease the prostitution, the profaning of the French name, used to
+            authorize these theft, these atrocious murders; we demand in a word
+            the <a>abolition of the slave trade</a>. . . . 
+</p>
+            Some will tell you
+            that the abolition of the <a>Slave Trade</a> will strike a most
+            deadly blow to the Navy, to public tax revenues, to the Colonies,
+            and to commerce.
+</p>
+            We will demonstrate to you that each year this
+            commerce carries to the tomb half of the sailors who are condemned
+            to work there; makes the other half physically and morally
+            gangrenous, and infects with its contagion the remaining commerce.
+</p>
+            We will demonstrate to you that the Slave Trade is a burden weighing
+            on the <a>public revenues</a>; that in order to support the slave trade,
+            the State is obligated to maintain at great expense settlements in
+            Africa; that it is again obliged to pay annually a subsidy of around
+            2,500,000 livres and that this subsidy is triply deadly: in that it
+            feeds a bloody commerce; in that the funds to supply this subsidy
+            are raised on the fruit of the labor of the indigenous inhabitants
+            of our countryside; and in that this subsidy, for the most part, is
+            poured into the hands of English ship-owners, to whom the French
+            merchants do not blush to lend their names in order to elude the
+            intentions of the Government. . . . Is not the French slave trade in
+            reality only a pretext to rob the State for the profit of
+            foreigners. . .
+          </p>
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <!-- This is where you enter all of your footnotes -->
+        <div class="footnote" id="immortal monument">
+          <b>(ST)</b> The author is challenging the French with their own
+          declaration, similar to how Affonso I used Christianity to appeal to
+          the Portuguese kings.
+        </div>
+
+        <div class="footnote" id="Slave Trade">
+          <b>(C)</b> in addition to slavery abolition, were there any other
+          rights restored to black people at this time?
+        </div>
+
+        <div class="footnote" id="abolition of the slave trade">
+          <iframe
+            width="100%""
+            
+            src="https://www.youtube.com/embed/L1awF5IBT4c"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="footnote" id="You">
+          <b>(S)</b>  Seems like the writer is giving a speech and this is the transcript
+        </div>
+        <div class="footnote" id="abjection and incompetence">
+            <b>(Q)</b> Does the author declare the black people as not capable of living alone?
+        </div>  
+        <div class="footnote" id="It is therefore">
+            <b>(C)</b> While the author acknowledges that abolition of the slave trade is not enough to acquire the absolute freedom of blacks, the author makes a reasonably progressive suggestion regarding blacks' right, considering the social context
+        </div>
+        <div class="footnote" id="public revenues">
+            <b>(AUD)</b> The French Revolution was one of the driving forces for the abolishment of slavery. This document covers numerous advantages of the abolishment of slave trade for both the nation as a whole and individual benefits.
+        </div>
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>
