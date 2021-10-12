@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+      <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+        crossorigin="anonymous"
+      />
+  
+      <!-- Bootstrap Icon Font-->
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+      />
+  
+      <!-- Custom CSS styling -->
+      <link rel="stylesheet" href="/styles/viewer.css" />
+  
+      <!--jQuery-->
+      <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"
+      ></script>
+  
+      <!--Fancybox-->
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+      />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+         <p>
+            <h2>
+            Thomas Phillips, “Buying Slaves at Whydah” (1694), from Elizabeth
+            Donnan, Documents Illustrative of the History of the Slave Trade to
+            America (New York: Octagon, 1965), vol. 1, pp. 399-408,410,
+            https://archive.org/details/DocumentsIllustrativeOfThe HistoryOf
+            TheSlaveTradeToAmericaVolume1_201604
+          </h2>
+        </p>
+
+        <img
+        src="https://cdn.kastatic.org/ka-perseus-images/490e75ee7de7240a50b33c1a2d94d3390d6fb4c7.jpg"
+        >
+          <p>
+            Our <a>factory</a> lies about three miles from the seaside, where we were
+            carry’d in hamocks, which the factor Mr. Joseph Peirson, sent to
+            attend our landing, with several arm’d blacks that belong’d to him
+            for our guard; we were soon truss’d in a bag, toss’d upon negroes
+            heads, and convey’d to our factory. Our factory, built by Capt.
+            Wiburne, Sir John Wiburne’s brother, stands low near the marshes,
+            which renders it a very unhealthy place to live in; the white men
+            the African company send there, seldom returning to tell their tale:
+            ’tis compass’d round with a mud-wall, about six foot high, and on
+            the south-side is the gate; within is a large yard, a mud thatch’d
+            house, where the factor lives, with the white men; also a
+            store-house, a trunk for slaves, and a place where they bury their
+            dead white men, call’d, very <a>improperly</a>, the hog-yard; there is also
+            a good forge, and some other small houses. . . . And here I must
+            observe that the rainy season begins about the middle of May, and
+            ends the beginning of August, in which space it was my misfortune to
+            be there, <a>which created sicknesses among my negroes aboard</a>, it being
+            noted for the most malignant season by the blacks themselves, who
+            while the rain lasts will hardly be prevail’d upon to stir out of
+            their huts. . . . The factory prov’d beneficial to us in another
+            kind; for after we had procured a parcel of slaves, and sent them
+            down to the sea-side to be carry’d off, it sometimes proved bad
+            weather, and so great a sea, that the canoes could not come ashore
+            to fetch them, so that they returned to the factory, where they were
+            secured and provided for till good weather presented, and then were
+            near to embrace the opportunity, we sometimes shipping off a hundred
+            of both sexes at a time. The factor, Mr. Peirson, was a brisk man,
+            and had good interest with the king, and credit with the subjects,
+            who knowing their tempers, which is very dastard, had good skill in
+            treating them both civil and rough, as occasion requir’d; most of
+            his slaves belonging to the factory, being gold coast negroes, who
+            are very bold, brave, and sensible, ten of which would beat the best
+            forty men the king of Whidaw had in his kingdom; besides their true
+            love, respect and fidelity to their master, for whose interest or
+            person they will most freely expose their own lives. . . .
+          </p>
+
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <div class="footnotes" id="factory">
+            <b>(SU)</b>The choice of word here, 'factory' is surprising because looking at the description it sounds like the factory is closer to a trading post.  The word choice maypoint to the perception of getting slaves as similar to getting products from a factory; in other words, people as products.
+          </div>
+          <div class="footnotes" id="improperly">
+            <b>(M)</b> Maybe these white men were not very respected?
+          </div>
+            <div class="footnotes" id="which created sicknesses among my negroes aboard">
+            <b>(ST)</b> The overall style of this document indicates that this is not a humanistic worry towards the slaves, but a concern about the 'quality' of slaves.
+            </div>
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+          <h3>
+            <b>
+              Hans Mayr,“The Voyages and Acts of Dom Francisco” (1505), from E.
+              Axelson, “South East Africa,” 1940, 231-238, quoted in G.S.P.
+              Freeman-Grenville, The East African Coast: Selected Documents
+              (London: Rex Collings, 1974), 105-112 and reprinted as part of the
+              Internet Modern History Sourcebook, Paul Halsall, ed., October
+              1998, http://www.fordham.edu/halsall/mod/1505mayr.html
+            </b>
+          </h3>
+          <img
+            src="images/300px-Map_of_Africa_with_flags.svg.png"
+            alt="african flags"
+          />
+          <p>
+            <a
+              >The town of Kilwa lies on an island around which ships of 500
+              tons can sail.</a
+            >
+            The island and town have a population of 4,000 people. It is very
+            fertile and produces maize similar to that of Guinea, butter, honey,
+            and wax. On the trees hang beehives like jars of three almudes
+            capacity, each closed with woven palm leaves. There are holes
+            through which the bees go in and come out.
+          </p>
+
+          <p>
+            There are many trees and palms here and <a>on the mainland</a>, some
+            of them different from those of Portugal. From the island to the
+            mainland the distance is in some places two leagues and in others
+            one.
+          </p>
+          <p>
+            There are sweet oranges, lemons, vegetables, small onions, and
+            aromatic herbs. They are grown in gardens and watered with water
+            from the wells. Here also grows betel which has leaves like ivy and
+            is grown like peas with sticks at the root for support. The leaf is
+            used by the wealthy Arabs for chewing together with specially
+            prepared limes which look like an ointment. They keep the leaves as
+            if they were to be put on wounds. These leaves make the mouth and
+            teeth very red, but are said to be most refreshing.
+          </p>
+          <p>
+            There are more black slaves than white Moors here: they are engaged
+            on farms growing maize and other things. There are various types of
+            peas which are produced by plants as high as large pepper trees;
+            when they are ripe, they are gathered and stored. The soil is red,
+            the top layer being sandy; the grass is always green. There are many
+            fat beasts, oxen, cows, sheep, and goats and also plenty of fish;
+            there are also whales which swim round the ships. There is no
+            running drinking water on the island. Near the island there are
+            other small islands which are inhabited. There are many boats as
+            large as a caravel of fifty tons and other smaller ones. The large
+            ones lie aground on the shore and are dragged down to the sea when
+            the people wish to sail them. They are built without nails: the
+            planks are sewn together with rope made from knotted coir from the
+            coconut palm. The same kind of rope is used for the rudder. The
+            boats are caulked with black pitch made from crude incense and
+            resin. They sail from here to Sofala, 255 leagues away.
+          </p>
+          <p>
+            The palms here do not produce dates but from some of them wine and
+            vinegar are obtained. These come from the palm trees which do not
+            produce coconuts. The coconuts are the size of large melons, and
+            from the fibres inside the shell all kinds of rope are made. Inside
+            the shell is a fruit the size of a large pineapple. It contains half
+            a pint of milk which is very pleasant to drink. When the milk has
+            been drunk the nut is broken and eaten; the kernel tastes like a
+            walnut which is not fully ripe. They dry it and it yields a large
+            quantity of oil.
+          </p>
+
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <!-- This is where you enter all of your footnotes -->
+        <div
+          class="footnotes"
+          id="The town of Kilwa lies on an island around which ships of 500 tons can sail."
+        >
+          <p>
+            <b>(AUD)</b>The descriptions of the author indicate an audience of
+            merchants and sailors.
+          </p>
+          <b>(AUD)</b>I think the audience is the colonialist ruler. The author
+          is describing what this place has to offer and how they can take
+          advantage of it (by perhaps bringing ships that can carry tons of
+          their plunder)
+        </div>
+
+        <div class="footnotes" id="on the mainland">
+          <b>(C)</b>It seems like the town of Kilwa is mainly an agricultural
+          town, most dependent on growing crops and the fertile land.
+        </div>
+
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>

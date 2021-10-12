@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+          <h3>
+            <b
+              >Letters between Affonso I (Nzinga Mbemba) and Manuel I and Joao
+              III (Kings of Portugal), second excerpt from Basil Davidson, The
+              African Past (London: Curtis Brown Ltd., 1964), fifth excerpt from
+              Malyn Newitt, ed., The Portuguese in West Africa, 1415-1670: A
+              Documentary History (Cambridge: Cambridge University Press, 2010),
+              170-171, all other excerpts are from Adam Hochschild, King
+              Leopold’s Ghost (New York: Mariner Books, 1998), 12-15</b
+            >
+          </h3>
+
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/D._João_III_-_Cristóvão_Lopes_%28attrib%29.png/1200px-D._João_III_-_Cristóvão_Lopes_%28attrib%29.png"
+            alt="Joao III of Portugal"
+          />
+
+          <p>
+            At our town of Kongo, written on the sixth day of July Joao Teizera
+            did it in 1526. The King. Dom Afonso.
+            <b>(Letter to Joao III, July 6, 1526)</b>
+          </p>
+          <p>
+            <a>These goods</a> exert such a great attraction over simple and
+            ignorant people that they believe in them and forget their belief in
+            God. . . .
+            <a
+              >My Lord, a monstrous greed pushes our subjects, even Christians,
+              to seize members of their own families, and of ours, to do
+              business by selling them as captives.</a
+            >
+            <b>(Letter to Joao III, August 25, 1526)</b>
+          </p>
+          <p>
+            Very high and very powerful prince King of Portugal, our brother,
+          </p>
+          <p>
+            Sir, your highness has been so good as to promise us that anything
+            we need we should ask for in our letters, and that everything will
+            be provided. And so that there may be peace and health of our
+            kingdoms, by God’s will, in our lifetime. And as there are among us
+            old folks and people who have lived for many days, many and
+            different diseases happen so often that we are pushed to the
+            ultimate extremes. And the same happens to our children, relatives,
+            and people, because this country lacks physicians and surgeons who
+            might know the proper cures for such diseases, as well as pharmacies
+            and drugs to make them better. And for this reason many of those who
+            had been already confirmed and instructed in the things of the holy
+            faith of Our Lord Jesus Christ perish and die. And the rest of the
+            people for the most part cure themselves with herbs and sticks and
+            other ancient methods, so that they live putting all their faith in
+            these herbs and ceremonies, and die believing that they are saved;
+            and this serves God poorly.
+          </p>
+          <p>
+            <a
+              >And to avoid such a great error, I think, and inconvenience,
+              since it is from God and from your highness that all the good and
+              the drugs and medicines have come to us for our salvation, we ask
+              your merciful highness to send us two physicians and two
+              pharmacists and one surgeon, so that they may come with their
+              pharmacies and necessary things to be in our kingdoms, for we have
+              extreme need of each and every one of them.</a
+            >
+            We will be very good and merciful to them, since sent by your
+            highness, their work and coming should be for good. We ask your
+            highness as a great favor to do this for us, because besides being
+            good in itself it is in the service of God as we have said above.
+          </p>
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <!-- This is where you enter all of your footnotes -->
+
+        <div class="footnotes" id="These goods">
+          <b>(M)</b> why doesn't the writer of this letter mention what these
+          goods are?
+        </div>
+
+        <div
+          class="footnotes"
+          id="My Lord, a monstrous greed pushes our subjects, even Christians, to seize members of their own families, and of ours, to do business by selling them as captives."
+        >
+          <b>(Q)</b> Does this mean to buy those goods, the natives sell their
+          own family members as slaves?
+        </div>
+
+        <div
+          class="footnotes"
+          id="And to avoid such a great error, I think, and inconvenience, since it is from God and from your highness that all the good and the drugs and medicines have come to us for our salvation, we ask your merciful highness to send us two physicians and two pharmacists and one surgeon, so that they may come with their pharmacies and necessary things to be in our kingdoms, for we have extreme need of each and every one of them."
+        >
+          <b>(SU)</b> It is surprising that the king wishes for medicine &
+          doctors. Contrarily to what I've known, it seems that African kings
+          had a great interest and knowledge of disease & population numbers
+        </div>
+
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>

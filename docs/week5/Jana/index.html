@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+
+         <h5> Ruy de Pina, Chronica del Rey Joao II (ca. 1488), in Africa and the
+          West: A Documentary History, vol. 1 From the Slave trade to Conquest,
+          1441-1905, eds. William H. Worger, Nancy L. Clark and Edward A. Alpers
+          (New York: Oxford University Press, 2010), 17-21.
+         </h5>
+          <p>
+            The first convert to Christianity (1488) Religion, trade, and
+            politics were inextricably linked from the very beginning of contact
+            between Portuguese and Africans. The Portuguese proselytized in the
+            name of Christianity as they <a>sought allies against Muslim trading
+            competitors</a> and political enemies and a way to secure the support of
+            the papacy. The new religion had distinct attractions for some
+            Africans, especially those who saw it as a political ideology that
+            would gain them knew allies in their own contest for power within
+            Africa. In 1488, Bemoym, King of Jalofo (at the mouth of the Senegal
+            River), who was a Muslim, and the newly arrived Portuguese found
+            that they had interests in common – Bemoym to regain his kingdom
+            with Portuguese arms, the Portuguese to establish a base on the
+            coast. Neither party expected the outcome that resulted.
+          </p>
+        
+        </p>
+        And this year one thousand four hundred and eighty-eight, while the king [John II] 
+        was in Setuvel [Setubal], he made <a>a Christian of Bemoym</a>, a negro prince of the kingdom 
+        of Gelof [Jalofo], which is at the entrance of the Rio de Çanaga [Senegal] in Guinee. 
+        His motives and reasons for this and the manner of doing it were <a>briefly and truthfully as 
+        follows</a>. During the previous year, while Gonçalo Coelho, a dependant of the king, was trafficking 
+        at the mouth of the said River, the said Bemoym, who at that time with prosperity and great power 
+        governed the said kingdom of Gelof, was informed through the interpreters of the royal perfection 
+        and the many virtues of the king, and desiring to <a>serve</a> him, through the said Gonçalo Coelho he sent 
+        him a rich present of gold one hundred slaves, all young men, with some products of his land. This man, 
+        by virtue of a huge manilla of gold, which he gave the king as a letter of credence, <a>according to his 
+        custom of being illiterate</a>, sent to him to ask for arms and ships; to which the king refused consent with 
+        <a>just</a> reasons, based on the excommunications and the apostolic prohibitions, <a>since he [Bemoym] was not a Christian</a>. 
+        Then in this year, because the said Bemoym was treacherously driven out of his kingdom, he determined to embark on 
+        one of the caravels of the trade, which frequent the coast, and to come in person to seek aid, assistance 
+        and justice from the king, who was in Setuvel. Bemoym arrived in Lixboa, accompanied by some negroes of 
+        his own royal blood and sons of persons closely related to men of importance. When the King had been <a>informed 
+        of their arrival</a>, he commanded that they should come to be entertained at Palmella, where he forthwith commanded his 
+        men to make abundant provision for him and to serve him with silver and attendance and every other civility which was 
+        proper to his station. Also he commanded all to be given rich and fine clothes to wear, according to the quality 
+        and merit of their persons demanded. <a>And when they were in a condition to come up to court</a>, the king sent and horses 
+        and mules, very well apparelled, to them all; and on the day when they were to make their entrance, the king commanded that 
+        Bemoym should be received by Dom Francisco Coutinho, Count of Marialva, and with him all lords and nobleman of the court, 
+        whom the king purposely ordered to be robed and adorned as well as possible.
+      </p>
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <!-- This is where you enter all of your footnotes -->
+        <div class="footnotes" id="sought allies against Muslim trading competitors">
+            (SU) This suggests that there is an alternative economic 
+            motive for the Portuguese spreading Christianity.
+        </div>
+        <div class="footnotes" id="a Christian of Bemoym">
+            <b>(C)</b> Considering that he changed his religion for the support of Portuguese 
+            forces, was his religion weak? Or was it a huge decision for him?
+        </div>
+        <div class="footnotes" id="briefly and truthfully as follows">
+            (AUD) Who is the author trying to justify/prove these reasons to?
+            (Q)(SU) why  does he doubt that the audience think he's untruthful?
+        </div>
+        <div class="footnotes" id="serve">
+            (AUTH) writing from a Portuguese POV
+        </div>
+        <div class="footnotes" id="according to his custom of being illiterate">
+            (ST) This sentence has an undertone suggesting that the gold given to 
+            the king is some sort of bribery.
+        </div>
+        <div class="footnotes" id="just">
+            <b>(SU)</b> It is a bit odd to claim these as “just” reasons when the Portuguese 
+            have at this point taken much from Africa while giving extremely little in return. 
+            To refuse a request for return goods no matter what reasoning leads me to think that
+            recompensation of some type was not originally in Portugal’s plans at all.
+        </div>
+        <div class="footnotes" id="since he [Bemoym] was not a Christian">
+            <b>(C)</b> Trade was dependent on religious backgrounds.
+        </div>
+        <div class="footnotes" id="informed of their arrival">
+            <b>(Q)</b> the main reason for their arrival was to seek aid, but from my 
+            understanding the king seems to be derailing them of their goal?
+        </div>
+        <div class="footnotes" id="And when they were in a condition to come up to court">
+            <b>(Q)</b> Does the condition refer to the external state of the guests that had to 
+            be established or to another kind of condition, perhaps the health condition?
+        </div>
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>

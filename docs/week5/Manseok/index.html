@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+          <p>
+            On that day Fernao Velloso, who was with the captain-major,
+            expressed a great desire to be
+            <a data-ip-footnote-id="SU1">
+              permitted to accompany the natives to their houses, so that he
+              might find out how they lived and what they ate.
+            </a>
+            The captain-major yielded to his importunities, and allowed him to
+            accompany them, and when we returned to the captain-major's vessel
+            to sup, he went away with the negroes. Soon after they had left us
+            they caught a seal, and when they came to the foot of a hill in a
+            barren place they roasted it, and gave some of it to Fernao Velloso,
+            as also some of the roots which they eat. After this meal <a data-ip-footnote-id="Q1">they
+            expressed a desire that he should not accompany them any further,</a>
+            but return to the vessels. When Fernao Velloso came abreast of the
+            vessels he began to shout, the negroes keeping in the bush.
+          </p>
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <!-- This is where you enter all of your footnotes -->
+        <div
+          class="footnote"
+          id="SU1"
+        >
+          (SU) It is surprising that the natives were so welcoming of the
+          newcomers. Maybe because they weren't hostile.
+        </div>
+
+        <div class="footnote" id="Q1">
+        (Q) Was there a particular reason behind that desire?
+        </div>
+        <!-- End of Footnotes -->
+      </div>
+    
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
+    />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+          <h3>
+            Ruy de Pina, Chronica del Rey Joao II (ca. 1488), in Africa and the
+            West: A Documentary History, vol. 1 From the Slave trade to
+            Conquest, 1441-1905, eds. William H. Worger, Nancy L. Clark and
+            Edward A. Alpers (New York: Oxford University Press, 2010), 17-21.
+          </h3>
+
+          <img
+            src="http://exploringafrica.matrix.msu.edu/wp-content/uploads/2016/04/Africas-Kingdoms-and-Empires.jpg
+        "
+            alt="Map for reference"
+          />
+          &nbsp;
+          <p>
+            His godfathers were the king, the queen, the prince, the duke, a
+            commissary of the pope who was at the court, and the bishop of
+            Tanger who at the time was the licentiate Caçadilha. Dom Justo,
+            bishop of <a>Cepta</a>, who in pontifical performed the office,
+            baptized them, and Bemoym received the name Dom Joham for love of
+            the king. Moreover, on the seventh day of November, the king dubbed
+            him a knight; and twenty-four others of his men were made Christians
+            in the counting-house of the said town. The king gave him a
+            coat-of-arms consisting of a golden cross on a red field surrounded
+            by the escutcheon of the arms of Portugal. On this same day, in a
+            solemn act and speaking as a great lord be rendered obedience and
+            paid homage to the king. Also he sent another submission, written in
+            Latin, to the pope, wherein he gave an account of his case and of
+            his conversion to the faith in words of deep devotion and high
+            praise to the king. The king determined to give him help and
+            assistance, and gave him twenty armed caravels. The captain of the
+            caravels was Pero Vaaz da Cunha, who
+            <a data-ip-footnote-id="[1]"
+              >carried orders to build at the entrance of the Rio da Çanaga a
+              fortress, which was not to be given to the said Bemoym, but was
+              always to belong to the king</a
+            >. For this purpose a great quantity of stones and planed timber was
+            then prepared, and also priests were assembled and a great number of
+            articles for churches and for the business of conversion; and Master
+            Alvaro, preacher to the king, of the order of Sam Domingos, was
+            selected to be the principal person.
+            <a data-ip-footnote-id="[2]"
+              >One of the very chief reasons which inspired the king to prepare
+              this fleet, and especially to undertake the building of a fortress
+              at the entrance of this river, was his conviction that the said
+              river, penetrating far into the interior, flowed to the city of
+              Tambucutu [Timbuktu] and by Mombare, where are the richest trades
+              and markets of gold in the world, from which all Berberia from
+              east and west up to Jherusalem is supplied and provided.</a
+            >
+            <a data-ip-footnote-id="[3]"
+              >For he believed that the said fortress in order to free and
+              safeguard the trade would provide great security in such a place
+              for his men and the merchandise.</a
+            >
+            This region up to the river and a little beyond was discovered in
+            the time and by the command of the Infante Dom Anrique, the inventor
+            and discoverer of this enterprise and the conquest of Guinee; and in
+            his letters and records it appears that he called this river the
+            <a>Nillo</a>, not that which enters the Mar do Levante at
+            Alexandria, but another branch of it which the cosmographers say
+            runs out to this ocean sea. But the real truth of this up to now –
+            which is the time of our lord King Dom Manuel the First – has yet to
+            be learned. Nevertheless, all these works, expenses and plans of
+            Bemoym were <a>changed</a> to deeds of evil; because, after the said
+            Pero Vaaz had put to land and entered into the said river, by
+            readily believing suspicions of disloyalty and treason against
+            Bemoym, or more truthfully because he wanted to return to the
+            kingdom, he slew the said Bemoym with a sword, and then returned to
+            this kingdom; whereat the king, being in Tavilla, grew very sad; and
+            he overlooked this crime by Pero Vaaz, seeing that he did not visit
+            <a>heavy punishment</a> upon him or many others who served it for
+            the same reason; yet the king strongly disapproved of their killing
+            him, since, being accomplices in such an error, they ought to have
+            been treated as they treated him, because they had him freely in
+            their power without offence or peril.
+          </p>
+
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div
+          class="col-md-4"
+          id="footnote-viewer-container"
+          style="display: none;"
+        >
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div
+            id="footnote-actions-multiple"
+            class="mt-3"
+            style="display: none;"
+          >
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <!-- This is where you enter all of your footnotes -->
+        <div class="footnotes" id="Cepta">
+          <b>(Q)</b> Was it intentional to bring in someone appointed to the
+          African continent?--Tanger and Ceuta (Cepta/Ceuta a Spanish enclave in
+          Morocco that was at one point Portuguese)
+        </div>
+
+        <div class="footnotes" id="[1]">
+          <b>(Q)</b> Did the Portuguese king genuinely want to help Bemoym out
+          because he had converted to Christianity? <br /><b>(A)</b> in the
+          beginning of the text, the author mentions how the relationship
+          between Africans and Europeans were shaped by the advantages these
+          relationships had for each side. "The new religion had distinct
+          attractions for some Africans, especially those who saw it as a
+          political ideology that would gain them knew allies in their own
+          contest for power within Africa"
+        </div>
+        <div class="footnotes" id="[2]">
+          <b>(A)</b> the author answers how King's charade of piousness and
+          becoming the god father of the Bemoym were all because of this
+          ulterior motive.
+        </div>
+        <div class="footnotes" id="[3]">
+          <b>(SU)</b> very surprising to see how the author, after a very
+          detailed description of the ceremonies, conversion to christianity,
+          etc., suddenly describes the real motives of the king
+        </div>
+        <div class="footnotes" id="Nillo">
+          <b>(Q)</b> Nillo is presumably the Nile? We can identify this train of
+          thought from the Muslim texts from previous weeks. They believed
+          (mistakenly?) the river by Timbuktu to be the Nile. The author of this
+          text acknowledges that this may or may not be true, but it seems that
+          Europeans were influenced by prior Muslim expeditions.
+        </div>
+        <div class="footnotes" id="changed">
+          <b>(M)</b> It would be interesting to learn the details of why this
+          happened from the other side of the story
+        </div>
+        <div class="footnotes" id="heavy punishment">
+          <b>(Q)</b> What kind of punishment did Pero Vaaz face then?
+        </div>
+      </div>
+      <!-- End of Footnotes -->
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>
