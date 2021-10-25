@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS: Open source toolkit that helps responsive design-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icon Font-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+    <!-- Custom CSS styling -->
+    <link rel="stylesheet" href="/styles/viewer.css" />
+
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Fancybox-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+
+    <title>Interactive Papers</title>
+  </head>
+  <body>
+    <div class="container-xxl py-3">
+      <div class="row">
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Interactive Papers</h2>
+        </div>
+        <div class="content col-md overflow-auto py-3" id="content-div">
+          <!-- Start of Content -->
+          <p><b>ABINA MANSAH</b> <a data-ip-footnote-id="[1]">No</a></p>
+          <p>
+            <b>AJA MELTON</b> Did you not say when you were before the court before that she called you her slave?
+            <a data-ip-footnote-id="[Map of African Slave Trade]"> [2] </a>
+          </p>
+          <p>
+            <b>ABINA MANSAH</b> On the occasion when I went and washed some clothes and returned, defendant's sister
+            said to me: "a person like you go out and wash cloths for other persons not for me nor your master," "did
+            you expect other persons to cook for you to eat," "a slave like you."
+          </p>
+          <p><b>AJA MELTON</b> When Eccoah said "Your master" <a data-ip-footnote-id="[2]">what did she mean?</a></p>
+          <p>
+            <b>ABINA MANSAH</b> <a data-ip-footnote-id="[3]">I cannot answer.</a>
+            <a data-ip-footnote-id="[Cartoon Picture of Abina Mansah]"> [1] </a>
+          </p>
+          <p>
+            <b>AJA MELTON</b> During the time you were with Eccoah did she compel you to do these things against your
+            will?
+          <a data-ip-footnote-id="[Reconfirguring Slavery: West African Trajectories]"> [3] </a>
+          <a data-ip-footnote-id="Youtube Video Summary of 'The Story of Abina Mansah'"> [4] </a></p>
+          <!-- End of Content -->
+        </div>
+
+        <!-- Footnote Viewer Sidebar. Contents are auto-populated when you click on a footnote inside the text -->
+        <div class="col-md-4" id="footnote-viewer-container" style="display: none;">
+          <button
+            type="button"
+            class="btn-close mt-3 mb-2"
+            aria-label="Close"
+            onclick="handleCloseFootnoteViewerClick()"
+          ></button>
+          <div class="footnote-viewer" id="footnote-viewer"></div>
+          <div id="footnote-actions-multiple" class="mt-3" style="display: none;">
+            <i
+              id="prev-btn"
+              class="bi bi-chevron-left"
+              style="color: inherit; cursor: pointer;"
+              onclick="handlePreviousSameFootnoteClick(this)"
+            ></i>
+            <span id="current">1</span> / <span id="total">1</span>
+            <i
+              id="next-btn"
+              class="bi bi-chevron-right"
+              style="color: inherit; cursor: pointer;"
+              onclick="handleNextSameFootnoteClick(this)"
+            ></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footnotes hidden" id="footnotes-div">
+        <!-- Start of Footnotes -->
+        <!-- This is where you enter all of your footnotes -->
+        <div class="footnote" id="[1]">
+          (Q) why was it that the sister rarely called or mentioned that Abina was a slave?
+        </div>
+        <div class="footnote" id="[2]">
+          (C) The graphic novel explains this a phrase that was lost in translation. Could there have been additional
+          cases where injustice has occurred due to this language barrier?
+        </div>
+        <div class="footnote" id="[3]">
+          (AUTH) Is she refusing to answer or unable to answer. If the former were true, would that mean that whoever
+          the "master" was had done something that could work against her in court?
+        </div>
+        <div class="footnote" id="[Cartoon Picture of Abina Mansah]">
+          <img
+            src="https://sfbayview.com/wp-content/uploads/2017/06/‘Abina-and-the-Important-Men’-scene-1.jpg"
+            alt="An animated picture of Abina Mansah from the graphic novel 'Abina and the Important Men.' Founded from: https://sfbayview.com/2017/06/the-animated-graphic-novel-abina-and-the-important-men-hits-sf-black-film-fest/"
+          />
+        </div>
+        <div class="footnote" id="[Map of African Slave Trade]">
+          <img
+            src="http://blog.richmond.edu/livesofmaps/files/2014/11/slave_trade_1650-1860_b-www.slaveryinamerica.org_3.jpg"
+            alt="A map of slave trade from 1650-1860. Map from: https://blog.richmond.edu/livesofmaps/2014/11/11/map-of-the-week-slave-trade-from-africa-to-the-americas-1650-1860/"
+          />
+        </div>
+        <div class="footnote" id="Youtube Video Summary of 'The Story of Abina Mansah'">
+          <iframe
+            width="1424"
+            height="563"
+            src="https://www.youtube.com/embed/P_i34qugMKQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="footnote" id="[Reconfirguring Slavery: West African Trajectories]">
+
+
+        <!-- End of Footnotes -->
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="/scripts/viewer.js"></script>
+  </body>
+</html>
